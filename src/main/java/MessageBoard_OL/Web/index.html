@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>~~~~~~~~留言板~~~~~~~~</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<script>
+    function showCar() {
+        var carr = new Car("Dodge", "Coronet R/T", 1968, "yellow");
+        function Car(name,type,year,color){
+            this.name=name;
+            this.type=type;
+            this.year=year;
+            this.color=color;
+        }
+        alert(JSON.stringify(carr));
+        document.write("aaaaa"+JSON.stringify(carr));
+
+    }
+
+
+
+
+</script>
+
+
+
+<div class="row">
+    <div class="col-xs-1">
+        <button onclick="showCar()">!A!</button>
+    </div>
+
+    <div class="col-xs-10">
+        <div class="page-header">
+            <div class="text=center">
+                <h1>
+                    <img src="/head1.jpg"class="img-rounded">
+                    DRRR~!
+                </h1>
+            </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    面板标题</h3>
+            </div>
+
+
+        <p id="myDiv">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p id="myDiva">
+                    </p>
+                </div>
+
+
+                    <!--TODO-->
+                <script>
+
+                    var xmlhttp;
+                    if (window.XMLHttpRequest)
+                    {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp=new XMLHttpRequest();
+                    }
+                    else
+                    {// code for IE6, IE5
+                        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+
+
+
+
+                        if (window.XMLHttpRequest)
+                        {// code for IE7+, Firefox, Chrome, Opera, Safari
+                            xmlhttp=new XMLHttpRequest();
+                        }
+                        else
+                        {// code for IE6, IE5
+                            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xmlhttp.open("GET","/Atest",true);
+                        xmlhttp.send();
+                        xmlhttp.onreadystatechange=function()
+                        {
+                            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                            {
+//                                alert(xmlhttp.responseText);
+                                document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+//                alert("服务器响应信息为"+xmlhttp.responseText);
+                            }
+                        }
+
+                </script>
+                </div>
+
+
+            </div>
+        </p>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <form role="form"  action="index.html" method="post">
+            <div class="form-group">
+                <label for="name">文本框</label>
+                <textarea class="form-control" rows="3" id="Cont" name="chatText"></textarea>
+            </div>
+            <div class="panel-footer" align="right">
+                <input type="submit" value="提交">
+            </div>
+        </form>
+
+        <br>
+        <!--<embed src="#{movie.flash)" allowFullScreen="true" quality="high" width="720" height="600" align="middle" type="=application/x-shockwave-flash">-->
+        <!--<dl class="dl-horizontal">-->
+            <!--<dt>聊天室</dt>-->
+            <!--<dd id="chat.title">AAAAAAA</dd>-->
+            <!--<dd id="aa">aaaaaa</dd>-->
+            <!--<dt>bb</dt>-->
+            <!--<dd>vvvvv</dd>-->
+        <!--</dl>-->
+
+
+        <!--</embed>-->
+    </div>
+
+    <div class="col-xs-1"></div>
+</div>
+
+</body>
+</html>

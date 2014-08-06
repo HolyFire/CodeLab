@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="activator-launch-1.2.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Demo_MessageBoard/activator-launch-1.2.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
