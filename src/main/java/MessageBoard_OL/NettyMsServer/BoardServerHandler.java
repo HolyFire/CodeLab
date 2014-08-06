@@ -1,6 +1,7 @@
 package MessageBoard_OL.NettyMsServer;
 
 import MessageBoard_OL.Config.Routes;
+import MessageBoard_OL.Config.requestConf;
 import MessageBoard_OL.DB.DbHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -68,40 +69,42 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
                 return;
             }
 
-//            处理POST请求
-            if(request.getMethod().equals(HttpMethod.POST)){
-                if(uri.getPath().equals("/index.html")){
-                    System.err.println("~~~~~~~~~~~~~~~~!!~~~~~~~~~~~~~~");
+            new requestConf(request,db);
 
-                    HttpDataFactory factory=new DefaultHttpDataFactory(false);
-                    HttpPostRequestDecoder decoder=new HttpPostRequestDecoder(factory,request);
-                    List list=decoder.getBodyHttpDatas();
-                    if(list.get(0).toString().equals("chatText=")){
-                        System.out.println("内容为空"+list.get(0).toString());
-                        return;
-                    }
-
-//                  分割等号前后数据 "a=b"
-                    String[] array=new String[list.size()];
-                    array=list.get(0).toString().split("=");
-                    String content=array[1];
-                    count++;
-                    db.write(count,content);
-
-//                    for(String a:array){
-//                        System.out.println("@@@@@@"+a);
+////            处理POST请求
+//            if(request.getMethod().equals(HttpMethod.POST)){
+//                if(uri.getPath().equals("/index.html")){
+//                    System.err.println("~~~~~~~~~~~~~~~~!!~~~~~~~~~~~~~~");
+//
+//                    HttpDataFactory factory=new DefaultHttpDataFactory(false);
+//                    HttpPostRequestDecoder decoder=new HttpPostRequestDecoder(factory,request);
+//                    List list=decoder.getBodyHttpDatas();
+//                    if(list.get(0).toString().equals("chatText=")){
+//                        System.out.println("内容为空"+list.get(0).toString());
+//                        return;
 //                    }
-                    System.err.println( list.get(0));
-                    System.err.println(decoder.getBodyHttpDatas());
-
-//                    ~~GET~~
-//                    QueryStringDecoder decoder=new QueryStringDecoder(request.getUri());
-//                    Map map=decoder.parameters();
-//                    System.out.println(map.get("chatText") + "~!!~!~!~!~!~!~!~!~!~");
-//                    System.err.println("~~~~~~~~~~~~"+decoder.parameters());
-
-                }
-            }
+//
+////                  分割等号前后数据 "a=b"
+////只有 name=content 所以array[1] 就是content
+//                    String[] array=list.get(0).toString().split("=");
+//                    String content=array[1];
+//                    count++;
+//                    db.write(count,content);
+//
+////                    for(String a:array){
+////                        System.out.println("@@@@@@"+a);
+////                    }
+//                    System.err.println( list.get(0));
+//                    System.err.println(decoder.getBodyHttpDatas());
+//
+////                    ~~GET~~
+////                    QueryStringDecoder decoder=new QueryStringDecoder(request.getUri());
+////                    Map map=decoder.parameters();
+////                    System.out.println(map.get("chatText") + "~!!~!~!~!~!~!~!~!~!~");
+////                    System.err.println("~~~~~~~~~~~~"+decoder.parameters());
+//
+//                }
+//            }
 
 
             if(uri.getPath()!=null){

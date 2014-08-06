@@ -57,7 +57,7 @@ System.err.println(path);
 
 
 
-                byte[] b=new byte[8192];
+                byte[] b=new byte[81920];
                 raf.seek(0);
                 int readCount=raf.read(b, 0, b.length);
 
