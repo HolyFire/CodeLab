@@ -1,22 +1,15 @@
 package MessageBoard_OL.NettyMsServer;
 
+import MessageBoard_OL.Config.RequestConf;
 import MessageBoard_OL.Config.Routes;
-import MessageBoard_OL.Config.requestConf;
 import MessageBoard_OL.DB.DbHandler;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.handler.codec.http.*;
-import io.netty.handler.codec.http.multipart.DefaultHttpDataFactory;
-import io.netty.handler.codec.http.multipart.HttpDataFactory;
-import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
 import io.netty.util.CharsetUtil;
 
 import java.net.URI;
-import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static io.netty.buffer.Unpooled.copiedBuffer;
 import static io.netty.handler.codec.http.HttpHeaders.is100ContinueExpected;
@@ -42,34 +35,19 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
             URI uri= new URI(request.getUri());
             System.err.println("request uri==" + uri.getPath());
 
-            if(uri.getPath().equals("/Atest")){
-                StringBuilder sb=new StringBuilder();
 
+            RequestConf requestConf =new RequestConf(ctx,request,db);
 
+            if(!requestConf.needContinue()){
+               return;
+            }
 
-                for(int i=0;i<count;i++){
-                sb.append("<div class=\"panel panel-default\">");
-                sb.append("<div class=\"panel-body\"");
-                sb.append("<p>");
-                sb.append("java输出的面板"+db.read(i+1));
-                sb.append("</p>");
-                sb.append("</div>");
-                sb.append("</div>");
-                }
-
-
-                ByteBuf buf=copiedBuffer(sb.toString(), CharsetUtil.UTF_8);
-                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
-                response.headers().set(HttpHeaders.Names.CONTENT_TYPE, "text/html; charset=UTF-8");
-                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
-                System.out.println(response.headers().toString()+"~~~~~~~~~~~~");
-                ctx.channel().write(response);
-                ctx.channel().writeAndFlush(buf);
-
+            if(uri.getPath()!=null){
+                new Routes(ctx,request);
                 return;
             }
 
-            new requestConf(request,db);
+
 
 ////            处理POST请求
 //            if(request.getMethod().equals(HttpMethod.POST)){
@@ -107,11 +85,6 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
 //            }
 
 
-            if(uri.getPath()!=null){
-                new Routes(ctx,request);
-                return;
-
-            }
 
             if (is100ContinueExpected(request)) {
                 send100Continue(ctx);

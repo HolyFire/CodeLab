@@ -109,6 +109,18 @@ public class DbHandler {
                 statement.executeUpdate(sql);
                 System.out.println("The Table MessContent is created");
             }
+
+            ResultSet rsusTable=connection.getMetaData().getTables(null,null,"clientuser",null);
+            if(rsusTable.next()){
+                System.out.println("The table clientuser exists");
+            }else{
+                String sql="create table clientuser(username varchar(50) primary key, password varchar(50))";
+                Statement statement=connection.createStatement();
+                statement.executeUpdate(sql);
+                System.out.println("The table user is created");
+            }
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -135,9 +147,21 @@ public class DbHandler {
         return  true;
     }
 
-    public int readcount(String str){
+    public boolean write(String username,String password){
+        try {
+            Statement statement=connection.createStatement();
+            String sql="insert into clientuser values('"+username+"','"+password+"')";
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+    public int readcount(String table){
         int count=0;
-        String sql="select count(*) from messcontent;";
+        String sql="select count(*) from"+table+";";
         try {
             Statement statement=connection.createStatement();
             ResultSet rs=statement.executeQuery(sql);
@@ -152,8 +176,27 @@ public class DbHandler {
         }
         return count;
     }
-    public String read(int id){
 
+    public int readcount(String table,String column,String value){
+        int count=0;
+        String sql="select count(*) from "+table+" where "+column+"='"+value+"';";
+        try {
+            Statement statement=connection.createStatement();
+            ResultSet rs=statement.executeQuery(sql);
+            ResultSetMetaData rsm=rs.getMetaData();
+//            int num=rsm.getColumnCount();
+            rs.next();
+            String ColumnName=rsm.getColumnName(1);
+            Object sqlview=rs.getString(ColumnName);
+            count=Integer.valueOf(sqlview.toString());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+
+    public String read(int id){
+//readcontent
         String content=new String();
         try {
             Statement statement=connection.createStatement();
@@ -176,6 +219,30 @@ public class DbHandler {
             e.printStackTrace();
         }
         return  content;
+    }
+
+    public String read(String username){
+//        readpassword
+        String password=new String();
+        try {
+            Statement statement=connection.createStatement();
+            String sql="select password from clientuser where username='"+username+"'";
+            ResultSet rs=statement.executeQuery(sql);
+            ResultSetMetaData rsm=rs.getMetaData();
+            int count=rsm.getColumnCount();
+            if(!rs.next()){
+                System.out.println("no password in");
+            }else {
+                String ColumnName=rsm.getColumnName(1);
+                Object sqlview=rs.getString(ColumnName);
+                password=sqlview.toString();
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return password;
     }
 
 

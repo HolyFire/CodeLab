@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<!--处理JSON-->
 <script>
     function showCar() {
         var carr = new Car("Dodge", "Coronet R/T", 1968, "yellow");
@@ -20,8 +21,12 @@
             this.year=year;
             this.color=color;
         }
+        var jsonobj=JSON.stringify(carr);
         alert(JSON.stringify(carr));
         document.write("aaaaa"+JSON.stringify(carr));
+
+        var obj=JSON.parse(jsonobj);
+        alert(obj.name+obj.type+obj.year+obj.color);
 
     }
 

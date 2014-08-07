@@ -8,7 +8,7 @@ public class Conf {
 //        StringBuilder sb=new StringBuilder("F:/IdeaProjects/MavenProjectSample/src/main/java/MessageBoard_OL/Web");
         StringBuilder sb=new StringBuilder(System.getProperty("user.dir")+"/src/main/java/MessageBoard_OL/Web");
         if(uri.equals("/")){
-            sb.append("/index.html");
+            sb.append("/login.html");
             return sb.toString();
         }
         if(!uri.equals("/")){
