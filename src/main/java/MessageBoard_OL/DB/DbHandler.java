@@ -99,16 +99,6 @@ public class DbHandler {
         }
 
         try {
-            ResultSet rsTable=connection.getMetaData().getTables(null,null,"messcontent",null);
-            if(rsTable.next()){
-                System.err.println("The table MessContent exists");
-            }
-            else {
-                String sql="create table MessContent (id int primary key,Content varchar(8192));";
-                Statement statement=connection.createStatement();
-                statement.executeUpdate(sql);
-                System.out.println("The Table MessContent is created");
-            }
 
             ResultSet rsusTable=connection.getMetaData().getTables(null,null,"clientuser",null);
             if(rsusTable.next()){
@@ -119,6 +109,20 @@ public class DbHandler {
                 statement.executeUpdate(sql);
                 System.out.println("The table user is created");
             }
+
+            ResultSet rsTable=connection.getMetaData().getTables(null,null,"messcontent",null);
+            if(rsTable.next()){
+                System.err.println("The table MessContent exists");
+            }
+            else {
+//                String sql="create table MessContent (id int primary key,Content varchar(8192));";
+                String sql="create table MessContent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username));";
+
+                Statement statement=connection.createStatement();
+                statement.executeUpdate(sql);
+                System.out.println("The Table MessContent is created");
+            }
+
 
 
         } catch (SQLException e) {
@@ -136,10 +140,10 @@ public class DbHandler {
         }
     }
 
-    public boolean write(int id,String content){
+    public boolean write(int id,String content,String username){
         try {
             Statement statement=connection.createStatement();
-            String sql="INSERT INTO MessContent VALUES ("+id+",'"+content+"')";
+            String sql="INSERT INTO MessContent VALUES ("+id+",'"+content+"','"+username+"')";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -161,7 +165,7 @@ public class DbHandler {
 
     public int readcount(String table){
         int count=0;
-        String sql="select count(*) from"+table+";";
+        String sql="select count(*) from "+table+";";
         try {
             Statement statement=connection.createStatement();
             ResultSet rs=statement.executeQuery(sql);
@@ -169,6 +173,7 @@ public class DbHandler {
 //            int num=rsm.getColumnCount();
             rs.next();
             String ColumnName=rsm.getColumnName(1);
+            System.err.println("ColumName in readcount="+ColumnName);
             Object sqlview=rs.getString(ColumnName);
             count=Integer.valueOf(sqlview.toString());
         } catch (SQLException e) {

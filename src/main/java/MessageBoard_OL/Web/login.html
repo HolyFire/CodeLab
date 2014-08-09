@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>~~~~~~~~留言板~~~~~~~~</title>
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
@@ -13,6 +12,10 @@
 
 <body background=BG.jpg>
 
+<script>
+        var isLogin = false;
+        var clientusername;
+</script>
 
 
 <!-- 外部表格开始 -->
@@ -26,7 +29,7 @@
     　　 <td>
 
     <form method="post" action="/login" name="myform" onsubmit="checkpost()">
-        <label for="username">用户名：</label><br /><input type="text" name="username" id="name" /><br />
+        <label for="username">用户名：</label><br /><input type="text" name="username" id="username" /><br />
         <label for="pw">  密码：</label><br /><input type="password" name="pw" id="pw" /><br />
         <input type="submit" value="登陆" />
         <a href="/signup.html">立即注册</a>
@@ -44,6 +47,52 @@
 
 
 
+<script>
+    //创建cookie
+    function SetCookie(name,value,days)
+    {
+        if (days)
+        {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+"; path=/";
+    }
+    //读取cookie
+    function GetCookie(name)
+    {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++)
+        {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    //删除cookies
+    function delCookie(name)
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval=getCookie(name);
+        if(cval!=null)
+            document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+
+    function checkpost(){
+        SetCookie("username",document.getElementById("username").value,0);
+        document.cookie = "password="+document.getElementById("pw").value;
+
+//        SetCookie("password",document.getElementById("pw").value,0);
+        return true;
+    }
+
+
+</script>
 
 
 

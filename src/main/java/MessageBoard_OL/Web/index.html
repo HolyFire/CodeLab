@@ -11,6 +11,32 @@
 </head>
 
 <body>
+<script>
+    var usname;
+</script>
+<!--<script>-->
+    <!--usname="abc";-->
+<!--</script>-->
+<script>
+    //读取cookie
+    function GetCookie(name)
+    {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++)
+        {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    usname=GetCookie("username");
+
+</script>
+
+
 <!--处理JSON-->
 <script>
     function showCar() {
@@ -59,14 +85,19 @@
                     面板标题</h3>
             </div>
 
-
-        <p id="myDiv">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <p id="myDiva">
+                        第一楼是管理员的
                     </p>
                 </div>
+                <div class="panel-footer">
+                    <p><script>document.write(usname);</script></p>
+                </div>
+            </div>
 
+
+            <p id="myDiv">
 
                     <!--TODO-->
                 <script>
@@ -105,7 +136,7 @@
                         }
 
                 </script>
-                </div>
+
 
 
             </div>
@@ -127,7 +158,12 @@
             <div class="form-group">
                 <label for="name">文本框</label>
                 <textarea class="form-control" rows="3" id="Cont" name="chatText"></textarea>
+                <input type="hidden" name="username" id="username1">
+                <script>
+                    document.getElementById("username1").value=usname;
+                </script>
             </div>
+
             <div class="panel-footer" align="right">
                 <input type="submit" value="提交">
             </div>
@@ -147,7 +183,13 @@
         <!--</embed>-->
     </div>
 
-    <div class="col-xs-1"></div>
+    <div class="col-xs-1">
+
+        <p id="clientuser"><script>document.write(usname);</script></p>
+
+
+    </div>
+
 </div>
 
 </body>

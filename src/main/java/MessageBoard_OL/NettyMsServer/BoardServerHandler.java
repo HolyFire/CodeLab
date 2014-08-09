@@ -28,7 +28,9 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         DbHandler db=DbHandler.getDbHandler();
         db.init();
-        count=db.readcount("messcontent");
+
+        count++;
+        System.err.println(count+"       !!!!!!!!!!!~~~~~~~~~~~");
 
         if(msg instanceof HttpRequest){
             HttpRequest request=this.request=(HttpRequest)msg;
@@ -38,14 +40,18 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
 
             RequestConf requestConf =new RequestConf(ctx,request,db);
 
+
             if(!requestConf.needContinue()){
                return;
             }
 
-            if(uri.getPath()!=null){
+
+            if(request.getUri()!=null){
                 new Routes(ctx,request);
                 return;
             }
+
+
 
 
 
@@ -85,10 +91,10 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
 //            }
 
 
-
-            if (is100ContinueExpected(request)) {
-                send100Continue(ctx);
-            }
+//
+//            if (is100ContinueExpected(request)) {
+//                send100Continue(ctx);
+//            }
 
         }
     }

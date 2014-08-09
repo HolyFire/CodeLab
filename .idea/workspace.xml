@@ -10,14 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062a69d5-0dad-4532-8347-0f0ed88bb990" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/App/User.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MavenProjectSample.iws" />
@@ -87,46 +83,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DbHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="197" column="18" selection-start="6174" selection-end="6174" vertical-scroll-proportion="4.0740743" vertical-offset="3074" max-vertical-offset="4104">
-              <folding>
-                <element signature="method#DbHandler#0;class#DbHandler#0" expanded="false" />
-                <element signature="method#des#0;class#DbHandler#0" expanded="false" />
-                <element signature="method#write#0;class#DbHandler#0" expanded="false" />
-                <element signature="method#readcount#0;class#DbHandler#0" expanded="false" />
-                <marker date="1407423893338" expanded="true" signature="3083:3150" placeholder="create table..MessContent..." />
-                <marker date="1407423893338" expanded="true" signature="3598:3677" placeholder="create table..clientuser..." />
-                <marker date="1407423893338" expanded="true" signature="4263:4316" placeholder="INSERT INTO ..." />
-                <marker date="1407423893338" expanded="true" signature="4627:4687" placeholder="insert into ..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4942" placeholder="select count..messcontent..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4940" placeholder="select count..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-                <marker date="1407423893338" expanded="true" signature="4920:4949" placeholder="select count..." />
-                <marker date="1407423893338" expanded="true" signature="5577:5636" placeholder="select count..missingValue..." />
-                <marker date="1407423893338" expanded="true" signature="6339:6380" placeholder="select conte..messcontent..." />
-                <marker date="1407423893338" expanded="true" signature="7193:7254" placeholder="select passw..clientuser..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RequestConf.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RequestConf.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="60" selection-start="5602" selection-end="5602" vertical-scroll-proportion="0.3832021" vertical-offset="2248" max-vertical-offset="3040">
+            <state line="155" column="52" selection-start="5655" selection-end="5655" vertical-scroll-proportion="2.1851852" vertical-offset="2662" max-vertical-offset="4047">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boot.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/boot.java">
+      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="19" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1349">
+            <state line="91" column="5" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-4.3818183" vertical-offset="1488" max-vertical-offset="2660">
               <folding />
             </state>
           </provider>
@@ -135,28 +104,33 @@
       <file leaf-file-name="Conf.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="31" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="665">
+            <state line="7" column="22" selection-start="163" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="665">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SamplerRecord.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/Sample/SamplerRecord.java">
+      <file leaf-file-name="head1.jpg" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/head1.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardServerHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
+            <state line="40" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="2375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/App/User.java">
+      <file leaf-file-name="Routes.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="33" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <folding>
-                <element signature="docComment;class#User#0" expanded="false" />
-              </folding>
+            <state line="48" column="22" selection-start="1402" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="1501">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,38 +138,25 @@
       <file leaf-file-name="signup.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="8" selection-start="1063" selection-end="1072" vertical-scroll-proportion="12.321428" vertical-offset="858" max-vertical-offset="1406">
-              <folding>
-                <element signature="n#style#0;n#span#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="23" selection-start="757" selection-end="757" vertical-scroll-proportion="-6.785714" vertical-offset="342" max-vertical-offset="1729">
+            <state line="58" column="27" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-7.857143" vertical-offset="882" max-vertical-offset="1406">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardServerHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="50" selection-start="2096" selection-end="2096" vertical-scroll-proportion="26.75" vertical-offset="2269" max-vertical-offset="3021">
+            <state line="26" column="9" selection-start="511" selection-end="697" vertical-scroll-proportion="0.81789136" vertical-offset="238" max-vertical-offset="3819">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessagePage.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="1.7272727" vertical-offset="266" max-vertical-offset="988">
               <folding />
             </state>
           </provider>
@@ -258,15 +219,15 @@
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/LocalPath.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/sql.cfg" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/requestConf.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/App/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" />
       </list>
     </option>
   </component>
@@ -283,7 +244,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1376" />
+    <option name="width" value="1372" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -566,101 +527,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MessageBoard_OL" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="App" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageBoardServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeLab" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MessageBoardServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sample" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1224,11 +1091,13 @@
       <workItem from="1407288236539" duration="4333000" />
       <workItem from="1407310164181" duration="25115000" />
       <workItem from="1407391692560" duration="22204000" />
+      <workItem from="1407459552876" duration="27515000" />
+      <workItem from="1407585926765" duration="9709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="743844000" />
+    <option name="totallyTimeSpent" value="781068000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1251,7 +1120,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1372" height="754" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1259,7 +1128,6 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3546154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1269,44 +1137,45 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33307692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2245827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22450532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="2" y="415" width="1300" height="177" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3546154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3268921" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32695374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2245827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3056" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="2" y="415" width="1300" height="177" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.312" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="2" y="415" width="1300" height="177" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289256" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39800996" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3136" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33307692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1398,16 +1267,6 @@
         <state line="98" column="84" selection-start="3166" selection-end="3166" vertical-scroll-proportion="0.049608354" vertical-offset="1482" max-vertical-offset="2470" />
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/AJAX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.18489583" vertical-offset="841" max-vertical-offset="2280" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/head1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/NettyHtml/HttpnoopServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="73" selection-start="1049" selection-end="1050" vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1159" />
@@ -1421,11 +1280,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/NettyHtml/HttpSnoopServerHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="58" selection-start="1117" selection-end="1117" vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="6460" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/jre/lib/rt.jar!/sun/nio/ch/Net.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="0" selection-start="7884" selection-end="7884" vertical-scroll-proportion="0.6893733" vertical-offset="2350" max-vertical-offset="2717" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/src.zip!/java/sql/ResultSet.java">
@@ -1453,11 +1307,6 @@
         <state line="288" column="0" selection-start="11540" selection-end="11540" vertical-scroll-proportion="0.75" vertical-offset="5186" max-vertical-offset="5567" />
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.21.Final/netty-all-4.0.21.Final.jar!/io/netty/buffer/UnpooledUnsafeDirectByteBuf.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="0" selection-start="4937" selection-end="4937" vertical-scroll-proportion="0.74052477" vertical-offset="1855" max-vertical-offset="2223" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/jre/lib/rt.jar!/sun/nio/ch/SocketChannelImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="0" selection-start="5815" selection-end="5815" vertical-scroll-proportion="0.6902174" vertical-offset="2026" max-vertical-offset="2394" />
@@ -1471,13 +1320,6 @@
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/jre/lib/rt.jar!/sun/nio/ch/SocketDispatcher.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="0" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="703" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/dbHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="27" selection-start="3270" selection-end="3270" vertical-scroll-proportion="0.0" vertical-offset="1766" max-vertical-offset="4180">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -1501,16 +1343,7 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="723" column="0" selection-start="26932" selection-end="26932" vertical-scroll-proportion="0.33246073" vertical-offset="12907" max-vertical-offset="37886">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1446" column="0" selection-start="22484" selection-end="22484" vertical-scroll-proportion="0.33246073" vertical-offset="27347" max-vertical-offset="72447">
-          <folding />
-        </state>
+        <state line="723" column="0" selection-start="26932" selection-end="26932" vertical-scroll-proportion="0.33246073" vertical-offset="12907" max-vertical-offset="37886" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/core-scripting.rnc">
@@ -1520,48 +1353,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="0" selection-start="1696" selection-end="1696" vertical-scroll-proportion="0.0" vertical-offset="2366" max-vertical-offset="4199">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="61" selection-start="576" selection-end="576" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="950">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="10" selection-start="823" selection-end="823" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1501">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/boot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1349">
-          <folding />
-        </state>
+        <state line="17" column="19" selection-start="346" selection-end="346" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1349" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/Sample/SamplerRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="836">
-          <folding />
-        </state>
+        <state line="5" column="13" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="836" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/App/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="33" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <folding>
-            <element signature="docComment;class#User#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="9" column="33" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/test.java">
@@ -1573,87 +1377,132 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/test_db.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="58" selection-start="2201" selection-end="2236" vertical-scroll-proportion="0.575592" vertical-offset="1071" max-vertical-offset="2413">
-          <folding>
-            <marker date="1395161382733" expanded="true" signature="-1:-1" placeholder="select * fro..cities..." />
-          </folding>
-        </state>
+        <state line="76" column="58" selection-start="2201" selection-end="2236" vertical-scroll-proportion="0.575592" vertical-offset="1071" max-vertical-offset="2413" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="63" selection-start="416" selection-end="418" vertical-scroll-proportion="0.2919708" vertical-offset="68" max-vertical-offset="988">
+        <state line="131" column="3" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0" vertical-offset="2365" max-vertical-offset="4199" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/dbHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="13" selection-start="2329" selection-end="2329" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="4180">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="8" selection-start="1063" selection-end="1072" vertical-scroll-proportion="12.321428" vertical-offset="858" max-vertical-offset="1406">
+        <state line="37" column="63" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="950">
           <folding>
-            <element signature="n#style#0;n#span#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.21.Final/netty-all-4.0.21.Final.jar!/io/netty/buffer/UnpooledUnsafeDirectByteBuf.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="0" selection-start="4937" selection-end="4937" vertical-scroll-proportion="3.233236" vertical-offset="1000" max-vertical-offset="2223" />
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/jre/lib/rt.jar!/sun/nio/ch/Net.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="0" selection-start="7884" selection-end="7884" vertical-scroll-proportion="0.8451087" vertical-offset="2292" max-vertical-offset="2717" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/head1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="2375">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="31" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="665">
+        <state line="7" column="22" selection-start="163" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="665">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="23" selection-start="757" selection-end="757" vertical-scroll-proportion="-6.785714" vertical-offset="342" max-vertical-offset="1729">
+        <state line="48" column="22" selection-start="1402" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="1501">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/AJAX.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="50" selection-start="2096" selection-end="2096" vertical-scroll-proportion="26.75" vertical-offset="2269" max-vertical-offset="3021">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1995">
+        <state line="48" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.33333334" vertical-offset="720" max-vertical-offset="2280">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="18" selection-start="6174" selection-end="6174" vertical-scroll-proportion="4.0740743" vertical-offset="3074" max-vertical-offset="4104">
+        <state line="95" column="0" selection-start="2661" selection-end="2733" vertical-scroll-proportion="3.0262468" vertical-offset="519" max-vertical-offset="4845">
           <folding>
-            <element signature="method#DbHandler#0;class#DbHandler#0" expanded="false" />
-            <element signature="method#des#0;class#DbHandler#0" expanded="false" />
-            <element signature="method#write#0;class#DbHandler#0" expanded="false" />
-            <element signature="method#readcount#0;class#DbHandler#0" expanded="false" />
-            <marker date="1407423893338" expanded="true" signature="3083:3150" placeholder="create table..MessContent..." />
-            <marker date="1407423893338" expanded="true" signature="3598:3677" placeholder="create table..clientuser..." />
-            <marker date="1407423893338" expanded="true" signature="4263:4316" placeholder="INSERT INTO ..." />
-            <marker date="1407423893338" expanded="true" signature="4627:4687" placeholder="insert into ..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4942" placeholder="select count..messcontent..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4940" placeholder="select count..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4933" placeholder="select count..." />
-            <marker date="1407423893338" expanded="true" signature="4920:4949" placeholder="select count..." />
-            <marker date="1407423893338" expanded="true" signature="5577:5636" placeholder="select count..missingValue..." />
-            <marker date="1407423893338" expanded="true" signature="6339:6380" placeholder="select conte..messcontent..." />
-            <marker date="1407423893338" expanded="true" signature="7193:7254" placeholder="select passw..clientuser..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="create table..clientuser..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="create table..MessContent..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..messcontent..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..missingValue..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..missingValue..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select conte..messcontent..." />
+            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select passw..clientuser..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="1.7272727" vertical-offset="266" max-vertical-offset="988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1368" column="0" selection-start="21300" selection-end="21300" vertical-scroll-proportion="0.33333334" vertical-offset="25865" max-vertical-offset="72447">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="60" selection-start="5602" selection-end="5602" vertical-scroll-proportion="0.3832021" vertical-offset="2248" max-vertical-offset="3040">
+        <state line="155" column="52" selection-start="5655" selection-end="5655" vertical-scroll-proportion="2.1851852" vertical-offset="2662" max-vertical-offset="4047">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="27" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-7.857143" vertical-offset="882" max-vertical-offset="1406">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="5" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-4.3818183" vertical-offset="1488" max-vertical-offset="2660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="9" selection-start="511" selection-end="697" vertical-scroll-proportion="0.81789136" vertical-offset="238" max-vertical-offset="3819">
           <folding />
         </state>
       </provider>

@@ -12,8 +12,10 @@ import io.netty.util.CharsetUtil;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 import static io.netty.buffer.Unpooled.copiedBuffer;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -24,14 +26,22 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 
 public class RequestConf {
     private boolean flag=true;
+
+
+
+
     public RequestConf(ChannelHandlerContext ctx,HttpRequest request, DbHandler db) throws URISyntaxException {
+
 
         URI uri= new URI(request.getUri());
         String method=uri.getPath();
         int count=db.readcount("messcontent");
+        System.out.println("count+++++++++++++++++++"+count);
+
 
         //            处理POST请求
         if(request.getMethod().equals(HttpMethod.POST)){
+
 
             if(method.equals("/index.html")){
                 System.err.println("~~~~~~~~~~~~~~~~!!~~~~~~~~~~~~~~");
@@ -47,8 +57,10 @@ public class RequestConf {
 //                  分割等号前后数据 "a=b"
                 String[] array=list.get(0).toString().split("=");
                 String content=array[1];
+                array=list.get(1).toString().split("=");
+                String username=array[1];
                 count++;
-                db.write(count,content);
+                db.write(count,content,username);
 
 //                    for(String a:array){
 //                        System.out.println("@@@@@@"+a);
@@ -77,8 +89,11 @@ public class RequestConf {
                     String[] array=list.get(i).toString().split("=");
                     map.put(array[0],array[1]);
                 }
+
+
                 db.write(map.get("username").toString(),map.get("password").toString());
                 System.out.println(map.toString());
+
 
                 flag=false;
             }
@@ -89,6 +104,10 @@ public class RequestConf {
                 List list=decoder.getBodyHttpDatas();
                 if(list.get(0).toString().equals("username=")){
                     System.out.println("内容为空"+list.get(0).toString());
+                    flag=false;
+                    return;
+                }if(list.get(1).toString().equals("pw=")){
+                    System.out.println("内容为空"+list.get(1).toString());
                     flag=false;
                     return;
                 }
@@ -106,20 +125,51 @@ public class RequestConf {
                     sb.append("<script>");
                     sb.append("alert(\"用户名不存在\")");
                     sb.append("</script>");
+                    sb.append("<script>");
+                    sb.append("window.location=\"/login.html\";");
+                    sb.append("</script>");
+                    flag=false;
                 }else{
                 if(db.read(username).equals(passward)){
+                    //                保存登陆用户的用户名
+//                    clientusername=username;
+
+                    Set<Cookie> cookies;
+                    String value = request.headers().get(HttpHeaders.Names.COOKIE);
+                    if (value == null) {
+                        cookies = Collections.emptySet();
+                    } else {
+                        cookies = CookieDecoder.decode(value);
+                    }
+
+                    for (Cookie str : cookies) {
+                        System.out.println(str+"Cooooooooooooooooooooooooooooooooookies");
+                    }
+
+
+
+
+
+
+
                     sb.append("<script>");
-                    sb.append("window.location=\"/index.html\";\n");
+                    sb.append("window.location=\"/index.html\";");
+
+                    sb.append("usename="+"\""+username+"\";");
                     sb.append("</script>");
+
+                    flag=false;
                 }else{
                     sb.append("<script>");
                     sb.append("alert(\"密码不正确\")");
                     sb.append("</script>");
+                    sb.append("<script>");
+                    sb.append("window.location=\"/login.html\";");
+                    sb.append("</script>");
+                    flag=false;
                 }
                 }
-                sb.append("<script>");
-                sb.append("window.location=\"/login.html\";");
-                sb.append("</script>");
+
 
                     ByteBuf buf=copiedBuffer(sb.toString(), CharsetUtil.UTF_8);
                     HttpResponse response=new DefaultHttpResponse(HTTP_1_1, HttpResponseStatus.OK);
@@ -130,15 +180,14 @@ public class RequestConf {
 
 
 
-
-                flag=false;
             }
 
         }
 
-//        TODO 未显示内容
+//        get请求
         if(uri.getPath().equals("/Atest")){
             StringBuilder sb=new StringBuilder();
+            System.err.println(count+"~~~~~count");
             for(int i=0;i<count;i++){
                 sb.append("<div class=\"panel panel-default\">");
                 sb.append("<div class=\"panel-body\"");
@@ -146,23 +195,29 @@ public class RequestConf {
                 sb.append("java输出的面板"+db.read(i+1));
                 sb.append("</p>");
                 sb.append("</div>");
+                sb.append("<div class=\"panel-footer\">");
+                sb.append("<p>");
+                sb.append("aaa");
+                sb.append("</p>");
+                sb.append("</div>");
                 sb.append("</div>");
             }
+
 
 
             ByteBuf buf=copiedBuffer(sb.toString(), CharsetUtil.UTF_8);
             HttpResponse response=new DefaultHttpResponse(HTTP_1_1, HttpResponseStatus.OK);
             response.headers().set(HttpHeaders.Names.CONTENT_TYPE, "text/html; charset=UTF-8");
             response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
-            System.out.println(response.headers().toString()+"~~~~~~~~~~~~");
+            System.out.println(response.headers().toString() + "~~~~~~~~~~~~");
+
             ctx.channel().write(response);
             ctx.channel().writeAndFlush(buf);
 
             flag=false;
         }
-
-
     }
+
 
     public boolean needContinue(){
         return flag;
