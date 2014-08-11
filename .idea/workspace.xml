@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="062a69d5-0dad-4532-8347-0f0ed88bb990" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" afterPath="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
@@ -86,7 +87,52 @@
       <file leaf-file-name="RequestConf.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="155" column="52" selection-start="5655" selection-end="5655" vertical-scroll-proportion="2.1851852" vertical-offset="2662" max-vertical-offset="4047">
+            <state line="199" column="26" selection-start="7577" selection-end="7577" vertical-scroll-proportion="-9.592592" vertical-offset="3180" max-vertical-offset="4047">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DbHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="253" column="0" selection-start="8090" selection-end="8090" vertical-scroll-proportion="-98.51852" vertical-offset="0" max-vertical-offset="2888">
+              <folding>
+                <element signature="method#des#0;class#DbHandler#0" expanded="false" />
+                <element signature="method#write#0;class#DbHandler#0" expanded="false" />
+                <element signature="method#write#1;class#DbHandler#0" expanded="false" />
+                <element signature="method#readcount#0;class#DbHandler#0" expanded="false" />
+                <element signature="method#readcount#1;class#DbHandler#0" expanded="false" />
+                <element signature="method#read#0;class#DbHandler#0" expanded="false" />
+                <element signature="method#readusername#0;class#DbHandler#0" expanded="false" />
+                <element signature="method#read#1;class#DbHandler#0" expanded="false" />
+                <marker date="1407763198633" expanded="true" signature="3072:3151" placeholder="create table..clientuser..." />
+                <marker date="1407763198633" expanded="true" signature="3704:3824" placeholder="create table..MessContent..." />
+                <marker date="1407763198633" expanded="true" signature="4436:4504" placeholder="INSERT INTO ..." />
+                <marker date="1407763198633" expanded="true" signature="4815:4875" placeholder="insert into ..." />
+                <marker date="1407763198633" expanded="true" signature="5108:5129" placeholder="select count..missingValue..." />
+                <marker date="1407763198633" expanded="true" signature="5836:5895" placeholder="select count..missingValue..." />
+                <marker date="1407763198633" expanded="true" signature="6605:6646" placeholder="select conte..messcontent..." />
+                <marker date="1407763198633" expanded="true" signature="7435:7477" placeholder="select usern..messcontent..." />
+                <marker date="1407763198633" expanded="true" signature="8292:8353" placeholder="select passw..clientuser..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Conf.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="29" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="665">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoardServer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="63" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="950">
               <folding />
             </state>
           </provider>
@@ -95,32 +141,16 @@
       <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="5" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-4.3818183" vertical-offset="1488" max-vertical-offset="2660">
+            <state line="83" column="5" selection-start="2005" selection-end="2245" vertical-scroll-proportion="-3.8" vertical-offset="1368" max-vertical-offset="2660">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Conf.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="22" selection-start="163" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="665">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head1.jpg" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/head1.jpg">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="BoardServerHandler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="2375">
+            <state line="34" column="45" selection-start="1157" selection-end="1170" vertical-scroll-proportion="-7.740741" vertical-offset="171" max-vertical-offset="2147">
               <folding />
             </state>
           </provider>
@@ -129,7 +159,7 @@
       <file leaf-file-name="Routes.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="22" selection-start="1402" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="1501">
+            <state line="48" column="22" selection-start="1402" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="912" max-vertical-offset="1748">
               <folding />
             </state>
           </provider>
@@ -138,7 +168,7 @@
       <file leaf-file-name="signup.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="27" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-7.857143" vertical-offset="882" max-vertical-offset="1406">
+            <state line="18" column="18" selection-start="752" selection-end="753" vertical-scroll-proportion="-6.2181816" vertical-offset="0" max-vertical-offset="1406">
               <folding />
             </state>
           </provider>
@@ -147,8 +177,11 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="9" selection-start="511" selection-end="697" vertical-scroll-proportion="0.81789136" vertical-offset="238" max-vertical-offset="3819">
-              <folding />
+            <state line="103" column="42" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.39297125" vertical-offset="1834" max-vertical-offset="4389">
+              <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,7 +189,7 @@
       <file leaf-file-name="MessagePage.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="1.7272727" vertical-offset="266" max-vertical-offset="988">
+            <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="988">
               <folding />
             </state>
           </provider>
@@ -222,11 +255,11 @@
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/requestConf.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/App/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html" />
       </list>
     </option>
@@ -244,7 +277,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1372" />
+    <option name="width" value="1376" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -282,7 +315,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -534,6 +566,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1093,11 +1126,13 @@
       <workItem from="1407391692560" duration="22204000" />
       <workItem from="1407459552876" duration="27515000" />
       <workItem from="1407585926765" duration="9709000" />
+      <workItem from="1407682716665" duration="1501000" />
+      <workItem from="1407746342672" duration="17021000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="781068000" />
+    <option name="totallyTimeSpent" value="799590000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1120,8 +1155,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1372" height="754" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1376" height="754" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1142,12 +1177,12 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33307692" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22450532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.312" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="2" y="415" width="1300" height="177" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22382398" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.312" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" x="2" y="415" width="1300" height="177" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1202,11 +1237,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.21.Final/netty-all-4.0.21.Final.jar!/io/netty/util/concurrent/DefaultThreadFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1855" selection-end="1855" vertical-scroll-proportion="-10.68" vertical-offset="512" max-vertical-offset="893" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/Test/TestNetty.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="6" selection-start="2794" selection-end="2794" vertical-scroll-proportion="0.19947506" vertical-offset="1387" max-vertical-offset="3895" />
@@ -1370,9 +1400,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-0.16493055" vertical-offset="228" max-vertical-offset="1102">
-          <folding />
-        </state>
+        <state line="9" column="13" selection-start="167" selection-end="167" vertical-scroll-proportion="-0.16493055" vertical-offset="228" max-vertical-offset="1102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/MessageBoardServer/test_db.java">
@@ -1392,15 +1420,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="63" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="950">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.21.Final/netty-all-4.0.21.Final.jar!/io/netty/buffer/UnpooledUnsafeDirectByteBuf.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="112" column="0" selection-start="4937" selection-end="4937" vertical-scroll-proportion="3.233236" vertical-offset="1000" max-vertical-offset="2223" />
@@ -1416,20 +1435,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.0" vertical-offset="760" max-vertical-offset="2375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="163" selection-end="164" vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Routes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="22" selection-start="1402" selection-end="1405" vertical-scroll-proportion="0.0" vertical-offset="880" max-vertical-offset="1501">
@@ -1439,71 +1444,102 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/AJAX.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.33333334" vertical-offset="720" max-vertical-offset="2280">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="2661" selection-end="2733" vertical-scroll-proportion="3.0262468" vertical-offset="519" max-vertical-offset="4845">
-          <folding>
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="create table..clientuser..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="create table..MessContent..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..messcontent..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..missingValue..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select count..missingValue..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select conte..messcontent..." />
-            <marker date="1407497780250" expanded="true" signature="-1:-1" placeholder="select passw..clientuser..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="1.7272727" vertical-offset="266" max-vertical-offset="988">
-          <folding />
-        </state>
+        <state line="48" column="0" selection-start="635" selection-end="635" vertical-scroll-proportion="0.33333334" vertical-offset="720" max-vertical-offset="2280" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1368" column="0" selection-start="21300" selection-end="21300" vertical-scroll-proportion="0.33333334" vertical-offset="25865" max-vertical-offset="72447">
+        <state line="1368" column="0" selection-start="21300" selection-end="21300" vertical-scroll-proportion="0.33333334" vertical-offset="25865" max-vertical-offset="72447" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/MessagePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="7" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="988">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="52" selection-start="5655" selection-end="5655" vertical-scroll-proportion="2.1851852" vertical-offset="2662" max-vertical-offset="4047">
+        <state line="37" column="63" selection-start="1396" selection-end="1396" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="950">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="27" selection-start="2057" selection-end="2057" vertical-scroll-proportion="-7.857143" vertical-offset="882" max-vertical-offset="1406">
+        <state line="18" column="18" selection-start="752" selection-end="753" vertical-scroll-proportion="-6.2181816" vertical-offset="0" max-vertical-offset="1406">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="5" selection-start="2528" selection-end="2528" vertical-scroll-proportion="-4.3818183" vertical-offset="1488" max-vertical-offset="2660">
+        <state line="83" column="5" selection-start="2005" selection-end="2245" vertical-scroll-proportion="-3.8" vertical-offset="1368" max-vertical-offset="2660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.21.Final/netty-all-4.0.21.Final.jar!/io/netty/util/concurrent/DefaultThreadFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.75" vertical-offset="512" max-vertical-offset="893">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/Conf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="29" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/NettyMsServer/BoardServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="45" selection-start="1157" selection-end="1170" vertical-scroll-proportion="-7.740741" vertical-offset="171" max-vertical-offset="2147">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/DB/DbHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="0" selection-start="8090" selection-end="8090" vertical-scroll-proportion="-98.51852" vertical-offset="0" max-vertical-offset="2888">
+          <folding>
+            <element signature="method#des#0;class#DbHandler#0" expanded="false" />
+            <element signature="method#write#0;class#DbHandler#0" expanded="false" />
+            <element signature="method#write#1;class#DbHandler#0" expanded="false" />
+            <element signature="method#readcount#0;class#DbHandler#0" expanded="false" />
+            <element signature="method#readcount#1;class#DbHandler#0" expanded="false" />
+            <element signature="method#read#0;class#DbHandler#0" expanded="false" />
+            <element signature="method#readusername#0;class#DbHandler#0" expanded="false" />
+            <element signature="method#read#1;class#DbHandler#0" expanded="false" />
+            <marker date="1407763198633" expanded="true" signature="3072:3151" placeholder="create table..clientuser..." />
+            <marker date="1407763198633" expanded="true" signature="3704:3824" placeholder="create table..MessContent..." />
+            <marker date="1407763198633" expanded="true" signature="4436:4504" placeholder="INSERT INTO ..." />
+            <marker date="1407763198633" expanded="true" signature="4815:4875" placeholder="insert into ..." />
+            <marker date="1407763198633" expanded="true" signature="5108:5129" placeholder="select count..missingValue..." />
+            <marker date="1407763198633" expanded="true" signature="5836:5895" placeholder="select count..missingValue..." />
+            <marker date="1407763198633" expanded="true" signature="6605:6646" placeholder="select conte..messcontent..." />
+            <marker date="1407763198633" expanded="true" signature="7435:7477" placeholder="select usern..messcontent..." />
+            <marker date="1407763198633" expanded="true" signature="8292:8353" placeholder="select passw..clientuser..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Config/RequestConf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="199" column="26" selection-start="7577" selection-end="7577" vertical-scroll-proportion="-9.592592" vertical-offset="3180" max-vertical-offset="4047">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/MessageBoard_OL/Web/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="9" selection-start="511" selection-end="697" vertical-scroll-proportion="0.81789136" vertical-offset="238" max-vertical-offset="3819">
-          <folding />
+        <state line="103" column="42" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.39297125" vertical-offset="1834" max-vertical-offset="4389">
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#p#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

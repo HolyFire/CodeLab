@@ -121,6 +121,7 @@ public class RequestConf {
 
                 StringBuilder sb=new StringBuilder();
                 User user=new User();
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1, HttpResponseStatus.OK);
                 if(db.readcount("clientuser","username",username)!=1){
                     sb.append("<script>");
                     sb.append("alert(\"用户名不存在\")");
@@ -147,8 +148,8 @@ public class RequestConf {
                     }
 
 
-
-
+                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"realname="+username+";");
+                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"entrypermission=true;");
 
 
 
@@ -172,7 +173,6 @@ public class RequestConf {
 
 
                     ByteBuf buf=copiedBuffer(sb.toString(), CharsetUtil.UTF_8);
-                    HttpResponse response=new DefaultHttpResponse(HTTP_1_1, HttpResponseStatus.OK);
                     response.headers().set(HttpHeaders.Names.CONTENT_TYPE, "text/html; charset=UTF-8");
                     response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
                     ctx.channel().write(response);
@@ -191,13 +191,13 @@ public class RequestConf {
             for(int i=0;i<count;i++){
                 sb.append("<div class=\"panel panel-default\">");
                 sb.append("<div class=\"panel-body\"");
-                sb.append("<p>");
-                sb.append("java输出的面板"+db.read(i+1));
+                sb.append("<p style=\"word-break:break-all;\">");
+                sb.append(db.read(i+1));
                 sb.append("</p>");
                 sb.append("</div>");
                 sb.append("<div class=\"panel-footer\">");
-                sb.append("<p>");
-                sb.append("aaa");
+                sb.append("<p style=\"word-wrap:break-word;\" class=\"text-right\">");
+                sb.append(db.readusername(i+1));
                 sb.append("</p>");
                 sb.append("</div>");
                 sb.append("</div>");

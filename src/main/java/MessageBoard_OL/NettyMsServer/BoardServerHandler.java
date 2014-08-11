@@ -21,7 +21,6 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
  */
 public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
     private HttpRequest request;
-    int count=1;
 
 
     @Override
@@ -29,14 +28,17 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
         DbHandler db=DbHandler.getDbHandler();
         db.init();
 
-        count++;
-        System.err.println(count+"       !!!!!!!!!!!~~~~~~~~~~~");
 
         if(msg instanceof HttpRequest){
             HttpRequest request=this.request=(HttpRequest)msg;
             URI uri= new URI(request.getUri());
             System.err.println("request uri==" + uri.getPath());
 
+
+            if(uri.getPath().equals("/favicon.ico")){
+                System.err.println("/favicon aaaaaaaaaaa a a a a a a aa a ");
+                return;
+            }
 
             RequestConf requestConf =new RequestConf(ctx,request,db);
 

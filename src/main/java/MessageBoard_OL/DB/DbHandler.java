@@ -201,7 +201,7 @@ public class DbHandler {
     }
 
     public String read(int id){
-//readcontent
+//read board content
         String content=new String();
         try {
             Statement statement=connection.createStatement();
@@ -224,6 +224,31 @@ public class DbHandler {
             e.printStackTrace();
         }
         return  content;
+    }
+
+    public String readusername(int id){
+        String username=new String();
+        try {
+            Statement statement=connection.createStatement();
+            String sql="select username from messcontent where id="+id;
+            ResultSet rs=statement.executeQuery(sql);
+            ResultSetMetaData rsm=rs.getMetaData();
+            int count=rsm.getColumnCount();
+
+            if(!rs.next()){
+                System.out.println("No Data in");
+            }else {
+                for(int i=0;i<count;i++){
+                    String ColumnName=rsm.getColumnName(i+1);
+                    Object sqlview=rs.getString(ColumnName);
+                    username=sqlview.toString();
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return  username;
     }
 
     public String read(String username){
