@@ -36,6 +36,7 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
 
 
             if(uri.getPath().equals("/favicon.ico")){
+                new Routes(ctx,request);
                 System.err.println("/favicon aaaaaaaaaaa a a a a a a aa a ");
                 return;
             }

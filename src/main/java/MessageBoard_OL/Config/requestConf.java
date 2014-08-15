@@ -9,7 +9,10 @@ import io.netty.handler.codec.http.multipart.DefaultHttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
 import io.netty.util.CharsetUtil;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collections;
@@ -147,9 +150,12 @@ public class RequestConf {
                         System.out.println(str+"Cooooooooooooooooooooooooooooooooookies");
                     }
 
+                    BASE64Encoder encoder=new BASE64Encoder();
+                    String strPw=encoder.encode(TripleDes.encryptMode(db.read(username).getBytes()));
 
                     response.headers().add(HttpHeaders.Names.SET_COOKIE,"realname="+username+";");
-                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"entrypermission=true;");
+
+                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"realpw="+strPw);
 
 
 
@@ -177,6 +183,34 @@ public class RequestConf {
                     response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
                     ctx.channel().write(response);
                     ctx.channel().writeAndFlush(buf);
+
+            }
+
+
+//            TODO
+            if(method.equals("/checksign")){
+                HttpDataFactory factory=new DefaultHttpDataFactory(false);
+                HttpPostRequestDecoder decoder=new HttpPostRequestDecoder(factory,request);
+                List list=decoder.getBodyHttpDatas();
+                if(list.get(0).equals("username=")||list.get(1).equals("password")){
+
+                }else{
+                    String[] array=list.get(0).toString().split("=");
+                    String username=array[1];
+                    array=list.get(1).toString().split("=");
+                    String password=array[1];
+                    BASE64Decoder base64Decoder=new BASE64Decoder();
+                    String realpassword=new String();
+                    System.out.println(username+password+"CHECKSIGN");
+                    try {
+                        realpassword=TripleDes.decryptMode(base64Decoder.decodeBuffer(password)).toString();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    if(db.read(username).equals(realpassword)){
+                        return;
+                    }
+                }
 
 
 

@@ -9,41 +9,62 @@
 
 </head>
 
-
-<body background=BG.jpg>
-
-<script>
-        var isLogin = false;
-        var clientusername;
-</script>
+<div class="container">
 
 
-<!-- 外部表格开始 -->
-　　 <table width="100%" height="100%" align="center">
-    　　 <tr>
-    　　 <td>
-    　　 <div align="center">
-    　　 <!-- 内部表格开始 -->
-    　　 <table width="200" height="300">
-    　　 <tr>
-    　　 <td>
 
-    <form method="post" action="/login" name="myform" onsubmit="checkpost()">
-        <label for="username">用户名：</label><br /><input type="text" name="username" id="username" /><br />
-        <label for="pw">  密码：</label><br /><input type="password" name="pw" id="pw" /><br />
-        <input type="submit" value="登陆" />
-        <a href="/signup.html">立即注册</a>
-    </form>
+    <div class="row">
 
-    </td>
-    　　 </tr>
-    　　 </table>
-    　　 <!-- 内部部表格结束 -->
-    　　 </div>
-    　　 </td>
-    　　 </tr>
-    　　 </table>
-　　 <!-- 外部表格结束 -->
+        <div class="row" style="background-color: lightyellow">
+                <h1>DRRR!</h1>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-8" style="background-color: burlywood;font-weight: bold">
+            <h3>Freedom MessageBoard</h3>
+            <p><br /></p>
+            <p>留点什么东西在登陆界面呢~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~会不会超品屏幕呢，还差一点点了。</p>
+            <p>看来是不会超屏了=。=</p>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="background-color: chocolate">
+                            <form role="form" method="post" action="/login" name="myform" onsubmit="checkpost()" style="color: whitesmoke">
+                                <br />
+                                <h4>登陆 DRRR! 账号</h4><br />
+                                <label class="sr-only" for="username">用户名</label>
+                                <input type="text" class="form-control" placeholder="用户名" name="username" id="username"  style="color: whitesmoke; border-color: black;background-color: burlywood"/><br />
+
+                                <input type="password" class="form-control" placeholder="密码" name="pw" id="pw" style="border-color: black; background-color: burlywood" /><br />
+                                <button type="submit" class="btn btn-default btn-block" style="border-color: black; background-color: papayawhip;font-weight: bolder">登陆</button><br />
+
+                                <div class="row" style="text-align: center;color: whitesmoke">
+                                    <p>还没有账号么？亲！</p>
+                                    <button type="submit" class="btn btn-default btn-lg"  style="font-weight: bolder" action="/signup">立即注册</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
 
 
 
@@ -131,5 +152,4 @@
     <!--}-->
 <!--</script>-->
 
-</body>
 </html>

@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html>
+<script>
+
+    function GetCookie(name)
+    {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++)
+        {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    if(GetCookie("entrypermission")!="true"){
+        window.location="/login.html";
+    }
+    if(GetCookie("username")!=GetCookie("realname")){
+        window.location="/login.html";
+    }
+
+
+</script>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>~~~~~~~~留言板~~~~~~~~</title>
@@ -12,6 +37,18 @@
 
 <body>
 <script>
+    var usname;
+</script>
+
+
+<script>
+    //读取cookie
+    usname=GetCookie("username");
+</script>
+
+
+<!--处理JSON-->
+<script>
     function showCar() {
         var carr = new Car("Dodge", "Coronet R/T", 1968, "yellow");
         function Car(name,type,year,color){
@@ -20,8 +57,12 @@
             this.year=year;
             this.color=color;
         }
+        var jsonobj=JSON.stringify(carr);
         alert(JSON.stringify(carr));
         document.write("aaaaa"+JSON.stringify(carr));
+
+        var obj=JSON.parse(jsonobj);
+        alert(obj.name+obj.type+obj.year+obj.color);
 
     }
 
@@ -41,7 +82,7 @@
         <div class="page-header">
             <div class="text=center">
                 <h1>
-                    <img src="/head1.jpg"class="img-rounded">
+                    <img src="/head1.jpg" class="img-rounded">
                     DRRR~!
                 </h1>
             </div>
@@ -54,14 +95,19 @@
                     面板标题</h3>
             </div>
 
-
-        <p id="myDiv">
             <div class="panel panel-default">
-                <div class="panel-body">
-                    <p id="myDiva">
+                <div class="panel-body" >
+                    <p id="myDiva" style="word-break:break-all;">
+                        第一楼是管理员的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                     </p>
                 </div>
+                <div class="panel-footer"  class="text-right">
+                    <p><script>document.write("管理员没账号=。=");</script></p>
+                </div>
+            </div>
 
+
+            <p id="myDiv">
 
                     <!--TODO-->
                 <script>
@@ -100,7 +146,7 @@
                         }
 
                 </script>
-                </div>
+
 
 
             </div>
@@ -122,7 +168,12 @@
             <div class="form-group">
                 <label for="name">文本框</label>
                 <textarea class="form-control" rows="3" id="Cont" name="chatText"></textarea>
+                <input type="hidden" name="username" id="username1">
+                <script>
+                    document.getElementById("username1").value=usname;
+                </script>
             </div>
+
             <div class="panel-footer" align="right">
                 <input type="submit" value="提交">
             </div>
@@ -142,7 +193,33 @@
         <!--</embed>-->
     </div>
 
-    <div class="col-xs-1"></div>
+    <div class="col-xs-1">
+
+        <p id="clientuser"><script>document.write(usname);</script>
+            <input type="button" onclick="checklogout()" value="登出" style="background-color:#FFF;border:0;cursor:pointer" />
+        </p>
+
+        <script>
+            function delCookie(name)
+            {
+                var exp = new Date();
+                exp.setTime(exp.getTime() - 1);
+                var cval=GetCookie(name);
+                if(cval!=null)
+                    document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+            }
+            function checklogout(){
+                delCookie("username");
+                delCookie("entrypermission");
+                delCookie("realname");
+                delCookie("password");
+                window.location="/login.html";
+            }
+        </script>
+
+
+    </div>
+
 </div>
 
 </body>

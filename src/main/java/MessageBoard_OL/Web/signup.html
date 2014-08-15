@@ -9,21 +9,43 @@
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-<form method="post" action="/signup" name="signupform" onsubmit="return checksign();">
-    <label for="username">用户名:</label><br><input type="text" name="username" id="username" onblur="checkname();">
-    <span id="emptyname" style="display:none">用户名不能为空</span>
-    <span id="existname" style="display:none">用户名已存在</span>
+<div class="container">
+    <div class="row" style="background-color: lightyellow">
+        <div class="col-md-6"><h1>注册 DRRR! 账号</h1></div>
+        <div class="col-md-6" style="text-align: right;font-size: small"><p>我已经注册了，现在就<a class="btn btn-default" href="/login.html" role="button">登陆</a></p></div>
+    </div>
 
-    <br>
-    <label for="pw1">密码:</label><br><input type="password"  id="pw1" onchange="checkpw();">
-    <br>
-    <label for="pw2">确认密码:</label><br><input type="password" name="password" id="pw2" onchange="checkpw();">
-    <span id="errorpwd" style="display:none">两次输入密码不一致</span>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br />
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form" method="post" action="/signup" name="signupform" onsubmit="return checksign();">
+                        <label for="username">用户名:</label><br><input type="text" class="form-control" name="username" id="username" onblur="checkname();">
+                        <span id="emptyname" style="display:none;color: red;font-size: smaller">用户名不能为空</span>
+                        <span id="existname" style="display:none;color: red;font-size: smaller">用户名已存在</span>
 
-    <br>
-    <input type="submit" value="注册">
-</form>
+                        <br/>
+                        <label for="pw1">密码:</label><br><input type="password" class="form-control"  id="pw1" onchange="checkpw();">
+                        <br>
+                        <label for="pw2">确认密码:</label><br><input type="password" class="form-control" name="password" id="pw2" onchange="checkpw();">
+                        <span id="errorpwd" style="display:none;color: red;font-size: smaller">两次输入密码不一致</span>
+
+                        <br/><br/>
+                        <input type="submit" value="注册">
+                    </form>
+                </div>
+                </div>
+            </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+
+</div>
+
 
 <script>
 

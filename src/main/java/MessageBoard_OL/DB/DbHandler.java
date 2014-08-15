@@ -74,20 +74,21 @@ public class DbHandler {
 
 
 //        String url="jdbc:postgresql://127.0.0.1:5432/mydb";
-//        String url="jdbc:mysql://SAE_MYSQL_HOST_M:SAE_MYSQL_PORT";
+//        String url="jdbc:mysql://SAE_MYSQL_HOST_M:SAE_MYSQL_PORT/app_wittyc";
         String url=map.get("url");
 
 //        String name="deepfuture";
-//        String name="SAE_MYSQL_USER";
+//        String name="3354www32o";
         String name=map.get("username");
 
-//        String password="SAE_MYSQL_PASS";
+//        String password="4hkxxyj5w4m04kyhwlxhyjj55055m5jj03k05i14";
 //        String password="123123";
         String password=map.get("password");
 
         try {
-//            Class.forName("org.postgresql.Driver");
-            Class.forName(map.get("sqlname"));
+            Class.forName("org.postgresql.Driver");
+//            com.mysql.jdbc.Driver
+//            Class.forName(map.get("sqlname"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -99,7 +100,6 @@ public class DbHandler {
         }
 
         try {
-
             ResultSet rsusTable=connection.getMetaData().getTables(null,null,"clientuser",null);
             if(rsusTable.next()){
                 System.out.println("The table clientuser exists");
@@ -116,7 +116,7 @@ public class DbHandler {
             }
             else {
 //                String sql="create table MessContent (id int primary key,Content varchar(8192));";
-                String sql="create table MessContent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username));";
+                String sql="create table messcontent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username));";
 
                 Statement statement=connection.createStatement();
                 statement.executeUpdate(sql);
@@ -143,7 +143,7 @@ public class DbHandler {
     public boolean write(int id,String content,String username){
         try {
             Statement statement=connection.createStatement();
-            String sql="INSERT INTO MessContent VALUES ("+id+",'"+content+"','"+username+"')";
+            String sql="INSERT INTO messcontent VALUES ("+id+",'"+content+"','"+username+"')";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();

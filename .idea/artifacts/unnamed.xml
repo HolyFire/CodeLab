@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="unnamed">
     <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
-    <root id="archive" name="unnamed.war">
+    <root id="archive" name="wittyc.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="MavenProjectSample" />
@@ -18,7 +18,8 @@
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1.1" />
           <element id="library" level="project" name="Maven: io.netty:netty-all:4.0.21.Final" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.9" />
-          <element id="library" level="project" name="postgresql-9.3-1101.jdbc41" />
+          <element id="file-copy" path="$PROJECT_DIR$/../log4j.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../sae-local-1.1.0.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">
