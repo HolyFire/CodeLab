@@ -9,6 +9,7 @@ import io.netty.handler.codec.http.multipart.DefaultHttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpDataFactory;
 import io.netty.handler.codec.http.multipart.HttpPostRequestDecoder;
 import io.netty.util.CharsetUtil;
+import org.omg.CORBA.SystemException;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -93,10 +94,21 @@ public class RequestConf {
                     map.put(array[0],array[1]);
                 }
 
-
                 db.write(map.get("username").toString(),map.get("password").toString());
                 System.out.println(map.toString());
 
+                StringBuilder sb=new StringBuilder();
+
+                sb.append("<script>");
+                sb.append("window.location=\"welcomepage.html\"");
+                sb.append("</script>");
+
+                ByteBuf buf=copiedBuffer(sb.toString(),CharsetUtil.UTF_8);
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+                response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
+                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+                ctx.channel().write(response);
+                ctx.channel().writeAndFlush(buf);
 
                 flag=false;
             }
@@ -119,6 +131,8 @@ public class RequestConf {
                 String username=array[1];
                 array=list.get(1).toString().split("=");
                 String passward=array[1];
+
+
 
 //array 0 username 1 unct 2 password 3pwct
 
@@ -152,17 +166,17 @@ public class RequestConf {
 
                     BASE64Encoder encoder=new BASE64Encoder();
                     String strPw=encoder.encode(TripleDes.encryptMode(db.read(username).getBytes()));
+                    System.err.println(strPw+"输出到cookie之前");
 
                     response.headers().add(HttpHeaders.Names.SET_COOKIE,"realname="+username+";");
 
-                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"realpw="+strPw);
+                    response.headers().add(HttpHeaders.Names.SET_COOKIE,"realpw="+strPw+";");
 
 
 
                     sb.append("<script>");
                     sb.append("window.location=\"/index.html\";");
 
-                    sb.append("usename="+"\""+username+"\";");
                     sb.append("</script>");
 
                     flag=false;
@@ -192,27 +206,59 @@ public class RequestConf {
                 HttpDataFactory factory=new DefaultHttpDataFactory(false);
                 HttpPostRequestDecoder decoder=new HttpPostRequestDecoder(factory,request);
                 List list=decoder.getBodyHttpDatas();
-                if(list.get(0).equals("username=")||list.get(1).equals("password")){
+
+                if(list.get(0).toString().equals("name=")||list.get(1).toString().equals("password=")){
 
                 }else{
                     String[] array=list.get(0).toString().split("=");
                     String username=array[1];
-                    array=list.get(1).toString().split("=");
-                    String password=array[1];
+// 因为密码经过加密处理 可能出现等号 所以需要单独读取
+                    String password=new String();
+                    String a=list.get(1).toString();
+//                    System.out.println(a);
+                    while (a.charAt(0)==' '){
+                        a=a.substring(1,a.length());
+                    }
+                    if(a.indexOf("password=")==0){
+                        password=a.substring("password=".length(),a.length());
+                    }
+//                    System.out.println(password+"读取解码前的password");
+
+//                    解码password
                     BASE64Decoder base64Decoder=new BASE64Decoder();
-                    String realpassword=new String();
-                    System.out.println(username+password+"CHECKSIGN");
+                    String realpassword=null;
+//                    System.out.println(username+password+"CHECKSIGN");
                     try {
-                        realpassword=TripleDes.decryptMode(base64Decoder.decodeBuffer(password)).toString();
+//                        base64Decoder解码后要是8的倍数
+//                        System.out.println("****************"+base64Decoder.decodeBuffer(password));
+                        if(base64Decoder.decodeBuffer(password).length%8!=0){
+                        }else{
+                            realpassword=new String(TripleDes.decryptMode(base64Decoder.decodeBuffer(password)));
+
+                        }
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    if(db.read(username).equals(realpassword)){
-                        return;
+
+                    if(realpassword!=null){
+                        if (db.read(username).equals(realpassword)){
+//                            System.out.println("又进来了");
+                            return;
+                        }
                     }
                 }
 
+                StringBuilder sb=new StringBuilder();
+//                sb.append("<script>");
+                sb.append("\"/login.html\"");
+//                sb.append("</script>");
+                ByteBuf buf=copiedBuffer(sb.toString(),CharsetUtil.UTF_8);
 
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+                response.headers().set(HttpHeaders.Names.CONTENT_TYPE, "text/html; charset=UTF-8");
+                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+                ctx.channel().write(response);
+                ctx.channel().writeAndFlush(buf);
 
             }
 
@@ -243,7 +289,7 @@ public class RequestConf {
             HttpResponse response=new DefaultHttpResponse(HTTP_1_1, HttpResponseStatus.OK);
             response.headers().set(HttpHeaders.Names.CONTENT_TYPE, "text/html; charset=UTF-8");
             response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
-            System.out.println(response.headers().toString() + "~~~~~~~~~~~~");
+//            System.out.println(response.headers().toString() + "~~~~~~~~~~~~");
 
             ctx.channel().write(response);
             ctx.channel().writeAndFlush(buf);

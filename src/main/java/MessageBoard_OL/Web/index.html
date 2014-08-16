@@ -7,51 +7,45 @@
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
-</head>
-<script>
+    <script>
 
-    function GetCookie(name)
-    {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++)
+        function GetCookie(name)
         {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
-
-    $.post("/checksign",
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++)
             {
-                name:GetCookie("username"),
-                password:GetCookie("realpw")
-            },
-            function(){
-                var xmlhttp;
-                if (window.XMLHttpRequest)
-                {// code for IE7+, Firefox, Chrome, Opera, Safari
-                    xmlhttp=new XMLHttpRequest();
-                }
-                else
-                {// code for IE6, IE5
-                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                xmlhttp.onreadystatechange=function()
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+            return null;
+        }
+
+        if(GetCookie("realname")==null||GetCookie("realpw")==null){
+            window.location="login.html";
+        }
+
+        $.post("/checksign",
                 {
-                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                    {
-                       document.write(xmlhttp.responseText);
+                    name:GetCookie("username"),
+                    password:GetCookie("realpw")
+                },function (data){
+                    if(data="login.html"){
+                        window.location="login.html";
+
+                    }else{
+                        return;
                     }
+
                 }
-            });
+        );
 
-</script>
+    </script>
+</head>
 
 
 
-<body>
 <script>
     var usname;
 </script>
@@ -62,29 +56,25 @@
     usname=GetCookie("username");
 </script>
 
+<!--<span id="check" style="display: block" >aa</span>-->
+<!--&lt;!&ndash;处理JSON&ndash;&gt;-->
+<!--<script>-->
+    <!--function showCar() {-->
+        <!--var carr = new Car("Dodge", "Coronet R/T", 1968, "yellow");-->
+        <!--function Car(name,type,year,color){-->
+            <!--this.name=name;-->
+            <!--this.type=type;-->
+            <!--this.year=year;-->
+            <!--this.color=color;-->
+        <!--}-->
+        <!--var jsonobj=JSON.stringify(carr);-->
+        <!--alert("It's a Json test"+JSON.stringify(carr));-->
 
-<!--处理JSON-->
-<script>
-    function showCar() {
-        var carr = new Car("Dodge", "Coronet R/T", 1968, "yellow");
-        function Car(name,type,year,color){
-            this.name=name;
-            this.type=type;
-            this.year=year;
-            this.color=color;
-        }
-        var jsonobj=JSON.stringify(carr);
-        alert("It's a Json test"+JSON.stringify(carr));
+        <!--var obj=JSON.parse(jsonobj);-->
+        <!--alert(obj.name+obj.type+obj.year+obj.color);-->
 
-        var obj=JSON.parse(jsonobj);
-        alert(obj.name+obj.type+obj.year+obj.color);
-
-    }
-
-
-
-
-</script>
+    <!--}-->
+<!--</script>-->
 
 
 
@@ -186,7 +176,7 @@
                 <textarea class="form-control" rows="3" id="Cont" name="chatText"></textarea>
                 <input type="hidden" name="username" id="username1">
                 <script>
-                    document.getElementById("username1").value=usname;
+                    document.getElementById("username1").value=GetCookie("username");
                 </script>
             </div>
 
@@ -211,7 +201,7 @@
 
     <div class="col-md-1">
 
-        <p id="clientuser"><script>document.write(usname);</script>
+        <p id="clientuser"><script>document.write(GetCookie("username"));</script>
             <input type="button"  onclick="checklogout()" value="登出" style="background-color:#FFF;border:0;cursor:pointer" />
         </p>
 
@@ -239,5 +229,5 @@
 </div>
 </div>
 
-</body>
+
 </html>

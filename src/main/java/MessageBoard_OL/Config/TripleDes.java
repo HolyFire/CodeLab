@@ -94,7 +94,7 @@ public class TripleDes {
 
 
         public static void main(String[] args) {
-            String msg = "3DES加密解密案例";
+            String msg = "123123";
             System.out.println("【加密前】：" + msg);
 
             //加密

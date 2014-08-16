@@ -135,6 +135,8 @@ public class Des {
 
     public static  void  main(String[] args)
     {
+        System.out.println(10/3);
+
         Des td=new Des();
         Key k=td.getKey("testkeyaaaaaa");
         System.out.println("获得的密钥key是:"+k);
