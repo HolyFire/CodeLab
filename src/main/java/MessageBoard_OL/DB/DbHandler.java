@@ -30,7 +30,7 @@ public class DbHandler {
             try
             {
 
-                reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/main/java/MessageBoard_OL/sql.cfg"));
+                reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/Web/sql.cfg"));
 
                 String line;
                 while ((line = reader.readLine()) != null)

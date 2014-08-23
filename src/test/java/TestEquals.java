@@ -1,3 +1,5 @@
+import java.net.URL;
+
 /**
  * Created by DELL on 14-7-10.
  */
@@ -5,9 +7,14 @@ public class TestEquals {
     public static void main(String[] args) {
         Person p1=new Person(5,"aaa");
         Person p2=new Person(5,"aaa");
-        System.out.println(p1.equals(p2));
+        System.out.println(p1.equals(p2)+new getUri().url);
+
 
     }
+    public static class getUri{
+            String url = this.getClass().getResource("/").toString();
+    }
+
 
 
 

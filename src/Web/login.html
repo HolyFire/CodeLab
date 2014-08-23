@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>~~~~~~~~留言板~~~~~~~~</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+</head>
+
+<div class="container">
+
+
+
+    <div class="row">
+
+        <div class="row" style="background-color: lightyellow">
+                <h1>DRRR!</h1>
+        </div>
+
+
+    <div class="row">
+        <div class="col-md-8" style="background-color: burlywood;font-weight: bold">
+            <h3>Freedom MessageBoard</h3>
+            <p><br /></p>
+            <p>留点什么东西在登陆界面呢~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~会不会屏呢，还差一点点了。</p>
+            <p>看来是不会超屏了</p>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="background-color: chocolate">
+                            <form role="form" method="post" action="/login" name="myform" onsubmit="checkpost()" style="color: whitesmoke">
+                                <br />
+                                <h4>登陆 DRRR! 账号</h4><br />
+                                <label class="sr-only" for="username">用户名</label>
+                                <input type="text" class="form-control" placeholder="用户名" name="username" id="username"  style="color: whitesmoke; border-color: black;background-color: burlywood"/><br />
+
+                                <input type="password" class="form-control" placeholder="密码" name="pw" id="pw" style="border-color: black; background-color: burlywood" /><br />
+                                <button type="submit" class="btn btn-default btn-block" style="border-color: black; background-color: papayawhip;font-weight: bolder">登陆</button><br />
+
+                                <div class="row" style="text-align: center;color: whitesmoke">
+                                    <p>还没有账号么？亲！</p>
+                                    <a class="btn btn-default btn-lg" href="signup.html" style="font-weight: bolder" role="button">立即注册</a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    //创建cookie
+    function SetCookie(name,value,days)
+    {
+        if (days)
+        {
+            var date = new Date();
+            date.setTime(date.getTime()+(days*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name+"="+value+expires+";";
+    }
+    //读取cookie
+    function GetCookie(name)
+    {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++)
+        {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    //删除cookies
+    function delCookie(name)
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval=getCookie(name);
+        if(cval!=null)
+            document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+    }
+
+    function checkpost(){
+        SetCookie("username",document.getElementById("username").value,0);
+        document.cookie = "password="+document.getElementById("pw").value;
+
+//        SetCookie("password",document.getElementById("pw").value,0);
+        return true;
+    }
+
+
+</script>
+
+
+
+<!--<script>-->
+    <!--function checkpost(){-->
+        <!--var xmlhttp-->
+        <!--var checkname;-->
+        <!--var checkpassword;-->
+        <!--if (window.XMLHttpRequest)-->
+        <!--{// code for IE7+, Firefox, Chrome, Opera, Safari-->
+            <!--xmlhttp=new XMLHttpRequest();-->
+        <!--}-->
+        <!--else-->
+        <!--{// code for IE6, IE5-->
+            <!--xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");-->
+        <!--}-->
+
+
+        <!--xmlhttp.onreadystatechange=function(){-->
+            <!--if(xmlhttp.readyState==4 && xmlhttp.status==200){-->
+
+                <!--var obj=JSON.parse(xmlhttp.responseText);-->
+                <!--checkname=obj.username;-->
+                <!--checkpassword=obj.password;-->
+            <!--}-->
+        <!--}-->
+        <!--xmlhttp.open("GET","/login",true);-->
+        <!--xmlhttp.send();-->
+
+        <!--if(document.forms[0].usname.value==checkname && document.forms[0].pw.value==checkpassword){-->
+            <!--window.location="/index.html";-->
+        <!--}else{-->
+            <!--alert("用户名或密码不正确！");-->
+            <!--return false;-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+
+</html>

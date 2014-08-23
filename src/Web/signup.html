@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>注册账号</title>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container">
+    <div class="row" style="background-color: lightyellow">
+        <div class="col-md-6"><h1>注册 DRRR! 账号</h1></div>
+        <div class="col-md-6" style="text-align: right;font-size: small"><p>我已经注册了，现在就<a class="btn btn-default" href="/login.html" role="button">登陆</a></p></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br />
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form" method="post" action="/signup" name="signupform" onsubmit="return checksign();">
+                        <label for="username">用户名:</label><br><input type="text" class="form-control" name="username" id="username" onblur="checkname();">
+                        <span id="emptyname" style="display:none;color: red;font-size: smaller">用户名不能为空</span>
+                        <span id="existname" style="display:none;color: red;font-size: smaller">用户名已存在</span>
+
+                        <br/>
+                        <label for="pw1">密码:</label><br><input type="password" class="form-control"  id="pw1" onchange="checkpw();">
+                        <br>
+                        <label for="pw2">确认密码:</label><br><input type="password" class="form-control" name="password" id="pw2" onchange="checkpw();">
+                        <span id="errorpwd" style="display:none;color: red;font-size: smaller">两次输入密码不一致</span>
+
+                        <br/><br/>
+                        <button class="btn btn-default btn-lg" type="submit">注册</button>
+                    </form>
+                </div>
+                </div>
+            </div>
+
+        <div class="col-md-4"></div>
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    function checkname(){
+        if(document.getElementById("username").value.length==0){
+            document.getElementById("emptyname").style.display="inline-block";
+            return false;
+        }
+        //TODO
+        if(document.getElementById("username").value=="待定"){
+            document.getElementById("existname").style.display="inline-block";
+            return false;
+        }
+        document.getElementById("emptyname").style.display="none";
+        document.getElementById("existname").style.display="none";
+
+
+    }
+
+    function checkpw(){
+
+        if(document.getElementById("pw1").value!=document.getElementById("pw2").value){
+
+            document.getElementById("errorpwd").style.display="inline-block";
+        }
+        else{
+            document.getElementById("errorpwd").style.display="none";
+        }
+    }
+
+    function checksign(){
+        if(document.getElementById("pw1").value!=document.getElementById("pw1").value){
+            alert("密码不一致");
+            return false;
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>
