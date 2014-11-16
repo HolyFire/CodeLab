@@ -4,14 +4,25 @@ import MessageBoard_OL.Config.RequestConf;
 import MessageBoard_OL.Config.Routes;
 import MessageBoard_OL.DB.DbHandler;
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
+import io.netty.channel.group.ChannelGroup;
+import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.*;
+import io.netty.handler.ssl.SslHandler;
 import io.netty.util.CharsetUtil;
+import io.netty.util.concurrent.Future;
+import io.netty.util.concurrent.GenericFutureListener;
+import io.netty.util.concurrent.GlobalEventExecutor;
 
+import java.net.InetAddress;
 import java.net.URI;
+import java.util.logging.Logger;
 
 import static io.netty.buffer.Unpooled.copiedBuffer;
+import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_LENGTH;
+import static io.netty.handler.codec.http.HttpHeaders.Names.CONTENT_TYPE;
 import static io.netty.handler.codec.http.HttpHeaders.is100ContinueExpected;
 import static io.netty.handler.codec.http.HttpResponseStatus.CONTINUE;
 import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
@@ -22,40 +33,84 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
     private HttpRequest request;
 
+    private static final Logger logger = Logger.getLogger(HttpSslContextFactory.class.getName());
+    static final ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
+//    @Override
+//    public void channelActive(final ChannelHandlerContext ctx) throws Exception {
+//        // Once session is secured, send a greeting and register the channel to the global channel
+//        // list so the channel received the messages from others.
+//        ctx.pipeline().get(SslHandler.class).handshakeFuture().addListener(
+//                new GenericFutureListener<Future<Channel>>() {
+//                    @Override
+//                    public void operationComplete(Future<Channel> future) throws Exception {
+//                        ctx.writeAndFlush(
+//                                "Welcome to " + InetAddress.getLocalHost().getHostName() +
+//                                        " secure chat service!\n");
+//                        ctx.writeAndFlush(
+//                                "Your session is protected by " +
+//                                        ctx.pipeline().get(SslHandler.class).engine().getSession().getCipherSuite() +
+//                                        " cipher suite.\n");
+//
+//                        channels.add(ctx.channel());
+//                    }
+//                });
+//    }
+
+
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
         DbHandler db=DbHandler.getDbHandler();
-        db.init();
+//        db.init();
 
+//System.err.println("weizhuanhuade rquest()()()()"+msg);
+        System.err.println("@@@@@@@@@@@@@@@@\n"+msg+"##################\n");
 
         if(msg instanceof HttpRequest){
             HttpRequest request=this.request=(HttpRequest)msg;
             URI uri= new URI(request.getUri());
-            System.err.println("request uri==" + uri.getPath());
+            System.err.println("request uri==" + uri.toString());
 
+//            if(uri.getPath().equals("/")){
+//                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+//                String sb="welcome to CyHeroku";
+//                response.headers().set(CONTENT_LENGTH,sb.length());
+//                response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
+//                ByteBuf buf=copiedBuffer(sb,CharsetUtil.UTF_8);
+//                ctx.channel().write(response);
+//                ctx.channel().writeAndFlush(buf);
+//            }
 
-            if(uri.getPath().equals("/favicon.ico")){
-                new Routes(ctx,request);
-                System.err.println("/favicon aaaaaaaaaaa a a a a a a aa a ");
-                return;
-            }
+//            if(uri.getPath().equals("/favicon.ico")){
+//                new Routes(ctx,request);
+//                System.err.println("/favicon aaaaaaaaaaa a a a a a a aa a ");
+//                ctx.channel().closeFuture();
+//                return;
+//            }
 
             RequestConf requestConf =new RequestConf(ctx,request,db);
 
 
             if(!requestConf.needContinue()){
-               return;
-            }
-
-
-            if(request.getUri()!=null){
-                new Routes(ctx,request);
+                System.out.println("返回");
+                ctx.channel().closeFuture();
                 return;
             }
 
 
+            if(request.getUri()!=null){
+//                System.out.println("进入到导航");
+                new Routes(ctx,request);
+//                Thread.sleep(15000);
+//                ctx.channel().closeFuture();
 
+//                TODO
+                return;
+            }
+
+//            ctx.channel().closeFuture();
+//
+//
 
 
 ////            处理POST请求
@@ -116,7 +171,7 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
-        ctx.close();
+        ctx.channel().closeFuture();
     }
 
 }

@@ -2,8 +2,6 @@ package com.MessageBoardServer;
 import java.sql.*;
 import java.util.*;
 
-import org.postgresql.*;
-
 /**
  * Created by DELL on 14-3-12.
  */

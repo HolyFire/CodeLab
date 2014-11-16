@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE Configure PUBLIC "-//MortBay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+
+ 
+
+<!-- 配置Server对象，此时会调用org.mortbay.jetty.Server默认构造函数new一个Server 路径：jetty-6.1.22\modules\jetty\src\main\java\org\mortbay\jetty\Server.java-->
+
+<Configure id="Server" class="MessageBoard_OL.NetttyMsServer.BoardServer">

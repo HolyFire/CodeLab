@@ -1,11 +1,13 @@
 package com.MessageBoardServer;
 
+import MessageBoard_OL.App.MessageBoard;
 import com.MessageBoardServer.Sample.SamplerRecord;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.util.ServiceLoader;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -27,17 +29,37 @@ public class boot {
         samplerRecord.setBirthDay(19900101);
         samplerRecord.setLocation("SiChuan");
 
+        SamplerRecord samplerRecord1 = new SamplerRecord();
+        samplerRecord1.setId(1);
+        samplerRecord1.setName("Zhang");
+        samplerRecord1.setBirthDay(19900101);
+        samplerRecord1.setLocation("SiChuan");
+
         List list=new ArrayList();
+        System.err.println(samplerRecord);
         String a=JSONObject.toJSONString(samplerRecord);
-        System.out.print(a+"~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println(a + "~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        HashMap map=new HashMap();
+        map.put("aaa","asdasda");
+        map.put("aaa","dddddsd");
+
+        System.err.println(JSONObject.toJSONString(map));
 
         list.add(samplerRecord);
-        System.out.println(JSONObject.toJSONString(list));
-        System.out.println(JSON.toJSONString(list));
-        System.out.println(list);
-        System.out.println();
-        System.out.println(outPut(samplerRecord));
-        System.out.println(outPut2(samplerRecord));
+        list.add(samplerRecord1);
+
+        MessageBoard messageBoard=new MessageBoard("cccc","cccc","cccc");
+        System.err.println(messageBoard);
+        System.err.println(JSONObject.toJSONString(messageBoard));
+
+//        System.err.println(list);
+//        System.err.println(JSONObject.toJSONString(list));
+//        System.err.println(JSON.toJSONString(list));
+//        System.out.println(list);
+//        System.out.println();
+//        System.out.println(outPut(samplerRecord));
+//        System.out.println(outPut2(samplerRecord));
     }
 
         public static String outPut(SamplerRecord samplerRecord){

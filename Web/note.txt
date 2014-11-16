@@ -1,0 +1,16 @@
+〖背景透明〗 
+<input type="button" value="Button" style="background-color: transparent; border: 0;"> 
+
+　　〖控件透明〗 
+<input id="Button1" type="button" value="button" style=" FILTER: alpha(opacity=0);"/>
+
+ 由于<body>标签的图片不能够拉伸，
+解决办法：
+1、图片不够大，又background属性不能拉伸图片； 2、只能用个div，把其z-index值设为负，并使这个div大小为整个body大小，在div里用<img> 3、body的background属性去掉，要不然会被遮住
+<div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">    
+<img src="pictures/background.jpg" height="100%" width="100%"/>    
+</div>    
+
+空格
+                <span style="font-size:12px;">&nbsp;&nbsp;&nbsp;</span>三个空格<br>
+                <span style="font-size:36px;">&nbsp;&nbsp;&nbsp;</span>三个空格<br>

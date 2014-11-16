@@ -1,8 +1,13 @@
 package MessageBoard_OL.DB;
 
+import MessageBoard_OL.App.MessageBoard;
+import MessageBoard_OL.GetLocation;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Locale;
@@ -25,12 +30,15 @@ public class DbHandler {
     public void init(){
 
 //读取sql.cfg文件
-            BufferedReader reader = null;
+
+        BufferedReader reader = null;
         HashMap<String,String> map=new HashMap();
             try
             {
 
-                reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/Web/sql.cfg"));
+//                reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/src/Web/sql.cfg"));
+//                reader = new BufferedReader(new FileReader(System.getProperty("user.dir")+"/Web/sql.cfg"));
+                reader = new BufferedReader(new FileReader(new GetLocation().getLocation()+"/Web/sql.cfg"));
 
                 String line;
                 while ((line = reader.readLine()) != null)
@@ -72,8 +80,29 @@ public class DbHandler {
             }
 
 
+//        从Heroku DATABASE_URL 中获取
+//        DATABASE_URL      postgres://<username>:<password>@<host>/<dbname>=> postgres://foo:foo@heroku.com:5432/hellodb
+////
+//        URI dbUri = null;
+//        String username=null;
+//        String password=null;
+//        String dbUrl=null;
+//        try {
+//
+//            dbUri = new URI(System.getenv("DATABASE_URL"));
+//            username = dbUri.getUserInfo().split(":")[0];
+//            password = dbUri.getUserInfo().split(":")[1];
+//            dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
+//
+//        } catch (URISyntaxException e) {
+//            e.printStackTrace();
+//        }
+
+
+
 
 //        String url="jdbc:postgresql://127.0.0.1:5432/mydb";
+        //        url=jdbc:postgresql://127.0.0.1:5432/mydb
 //        String url="jdbc:mysql://SAE_MYSQL_HOST_M:SAE_MYSQL_PORT/app_wittyc";
         String url=map.get("url");
 
@@ -83,7 +112,7 @@ public class DbHandler {
 
 //        String password="4hkxxyj5w4m04kyhwlxhyjj55055m5jj03k05i14";
 //        String password="123123";
-        String password=map.get("password");
+        String password2=map.get("password");
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -94,7 +123,8 @@ public class DbHandler {
         }
 
         try {
-            connection= DriverManager.getConnection(url,name,password);
+//            connection=DriverManager.getConnection(dbUrl,username,password);
+            connection= DriverManager.getConnection(url,name,password2);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -116,10 +146,20 @@ public class DbHandler {
             }
             else {
 //                String sql="create table MessContent (id int primary key,Content varchar(8192));";
-                String sql="create table messcontent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username));";
+//                留言表
+                String sql="create table messcontent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username),location varchar(50) default '未知');";
+//                文章表
+                String blog="create table myblog (id serial, Text text,style varchar(50), Tag varchar (100),date DATA);";
+
+
+//                String addLocation="alter table messcontent add location varchar(50)";
+//                String setDefaultLocation="alter table messcontent alter column location set default '未知';";
 
                 Statement statement=connection.createStatement();
                 statement.executeUpdate(sql);
+                statement.executeUpdate(blog);
+//                statement.executeUpdate(addLocation);
+//                statement.executeUpdate(setDefaultLocation);
                 System.out.println("The Table MessContent is created");
             }
 
@@ -140,10 +180,10 @@ public class DbHandler {
         }
     }
 
-    public boolean write(int id,String content,String username){
+    public boolean write(int id,String content,String username,String location){
         try {
             Statement statement=connection.createStatement();
-            String sql="INSERT INTO messcontent VALUES ("+id+",'"+content+"','"+username+"')";
+            String sql="INSERT INTO messcontent VALUES ("+id+",'"+content+"','"+username+"','"+location+"')";
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -200,6 +240,30 @@ public class DbHandler {
         return count;
     }
 
+//    查询留言板中全部信息
+    public MessageBoard showInMes(int id){
+        MessageBoard board=new MessageBoard();
+        try {
+            Statement statement=connection.createStatement();
+            String sql="select * from messcontent where id="+id;
+            ResultSet rs=statement.executeQuery(sql);
+            ResultSetMetaData rsm=rs.getMetaData();
+            int count=rsm.getColumnCount();
+            if(!rs.next()){
+
+            }else {
+                board.setContent(rs.getString("content"));
+                board.setUsername(rs.getString("username"));
+                board.setLocation(rs.getString("location"));
+//                System.err.println(board);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return board;
+    }
+
     public String read(int id){
 //read board content
         String content=new String();
@@ -214,6 +278,7 @@ public class DbHandler {
                 System.out.println("No Data in");
             }else {
                 for(int i=0;i<count;i++){
+
                     String ColumnName=rsm.getColumnName(i+1);
                     Object sqlview=rs.getString(ColumnName);
                     content=sqlview.toString();

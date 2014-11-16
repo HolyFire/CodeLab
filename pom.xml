@@ -26,6 +26,8 @@
             <scope>test</scope>
         </dependency>
 
+
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
@@ -50,11 +52,7 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-        </dependency>
+
 
         <!--testNg-->
         <dependency>
@@ -89,6 +87,12 @@
             <version>5.1.9</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jumpmind.symmetric.jdbc</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.2-1002-jdbc4</version>
+        </dependency>
+
 
 
     </dependencies>
@@ -107,8 +111,8 @@
 
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <!--<version>2.4</version>-->
-                <version>2.2</version>
+                <version>2.4</version>
+                <!--<version>2.2</version>-->
                 <executions>
                     <execution>
                         <id>make-assembly</id>
@@ -124,6 +128,19 @@
                                 <descriptor>package.xml</descriptor>
                             </descriptors>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
                     </execution>
                 </executions>
             </plugin>
