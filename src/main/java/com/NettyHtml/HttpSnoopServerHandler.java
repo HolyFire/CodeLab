@@ -52,7 +52,7 @@ public class HttpSnoopServerHandler extends SimpleChannelInboundHandler<Object> 
 ////                        "            //比较常用的方法，没什么可解释的，后面直接跟指定要跳转的地方。\n" +
 ////                        "\n" +
 ////                        "    </script>", CharsetUtil.UTF_8);
-////                final String path = Config.getRealPath(uri.getPath());
+////                final String path = Conf.getRealPath(uri.getPath());
 //
 //                ByteBuf buf = copiedBuffer("Hello,favicon.ico",CharsetUtil.UTF_8);
 //                // Build the response object.

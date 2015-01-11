@@ -1,16 +1,15 @@
 package MessageBoard_OL.DB;
 
+import MessageBoard_OL.App.MyBlog;
 import MessageBoard_OL.App.MessageBoard;
 import MessageBoard_OL.GetLocation;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Locale;
+import java.sql.Date;
+import java.util.*;
 
 /**
  * Created by DELL on 14-8-2.
@@ -147,9 +146,9 @@ public class DbHandler {
             else {
 //                String sql="create table MessContent (id int primary key,Content varchar(8192));";
 //                留言表
-                String sql="create table messcontent (id int primary key,Content varchar(8192),username varchar(50) references clientuser(username),location varchar(50) default '未知');";
+                String sql="create table messcontent (id int primary key,content varchar(8192),username varchar(50) references clientuser(username),location varchar(50) default '未知');";
 //                文章表
-                String blog="create table myblog (id serial, Text text,style varchar(50), Tag varchar (100),date DATA);";
+                String blog="create table myblog (id serial primary key ,title varchar(100) ,blogtext text,category varchar(50), tag varchar (100),createtime DATE,updatetime DATE);";
 
 
 //                String addLocation="alter table messcontent add location varchar(50)";
@@ -277,12 +276,13 @@ public class DbHandler {
             if(!rs.next()){
                 System.out.println("No Data in");
             }else {
-                for(int i=0;i<count;i++){
+//                for(int i=0;i<count;i++){
 
-                    String ColumnName=rsm.getColumnName(i+1);
+//                String ColumnName=rsm.getColumnName(i+1);
+                String ColumnName=rsm.getColumnName(1);
                     Object sqlview=rs.getString(ColumnName);
                     content=sqlview.toString();
-                }
+//                }
             }
 
         } catch (SQLException e) {
@@ -340,7 +340,86 @@ public class DbHandler {
         return password;
     }
 
+//~~~~~~~~  blog 添加
+    public void writeBlog(MyBlog myBlog){
+// "create table myblog (id serial primary key ,title varchar(100) ,blogtext text,category varchar(50), tag varchar (100),createtime DATE,updatetime DATE ;"
+        Timestamp now =new Timestamp(new java.util.Date().getTime());
+        int id=myBlog.getId();
+        String title=myBlog.getTitle();
+        String blogtext=myBlog.getBlogText();
+        String category=myBlog.getCategory();
+        String tag=myBlog.getTag();
+        Timestamp createtime=now;
+        Timestamp updatetime=now;
 
+        String sql="insert into myblog (title,blogtext,category,tag,createtime,updatetime) values(null,'"+title+"','"+blogtext+"','"+category+"','"+tag+"','"+createtime+"','"+updatetime+"');";
+        try {
+            Statement statement=connection.createStatement();
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+//~~~~~~~~~read last blog id
+    public int readBlogLastId() throws SQLException {
+        int lastid=0;
+        Statement statement=connection.createStatement();
+        String sql="select MAX(id) from myblog";
+        ResultSet rs=statement.executeQuery(sql);
+        ResultSetMetaData rsm=rs.getMetaData();
+        if (rs.next()){
+            lastid=rs.getInt(rsm.getColumnName(1));
+        }
+        return  lastid;
+    }
+
+
+//~~~~~~~~~ blog 读取
+
+    public MyBlog readBlogIndex(int id) throws SQLException {
+        MyBlog blog=new MyBlog();
+
+        Statement statement=connection.createStatement();
+        String sql="select * from myblog where id="+id;
+        ResultSet rs=statement.executeQuery(sql);
+        ResultSetMetaData rsm=rs.getMetaData();
+        int count=rsm.getColumnCount();
+        if(!rs.next()){
+            System.err.println("No blog with this id");
+        }else {
+            blog.setId(rs.getInt("id"));
+            blog.setBlogText(rs.getString("blogtext"));
+            blog.setCategory(rs.getString("category"));
+            blog.setTag(rs.getString("tag"));
+            blog.setCreatetime(rs.getDate("createtime"));
+            blog.setTitle(rs.getString("title"));
+            blog.setUpdatetime(rs.getDate("updatetime"));
+        }
+
+        return blog;
+
+    }
+
+//    tag_pool tag池读取
+    public HashSet<String> readTagPool(){
+        String sql="";
+        HashSet<String> set=new HashSet<String>();
+        try {
+            Statement statement=connection.createStatement();
+            ResultSet rs=statement.executeQuery(sql);
+            while (rs.next()){
+               set.add(rs.getString("id"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return set;
+
+    }
 
 
 }

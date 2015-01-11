@@ -1,129 +1,272 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
-    <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/jquery-2.1.1.min.js"></script>
-    <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="/jquery-2.1.1.min.js"></script>-->
+    <!--<script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Holy Fire</title>
     <style>
         .aw-logo, .aw-search-box, .aw-top-nav{float: left;}
         .aw-publish-btn, .aw-user-nav{float: right;}
         .bg{background-color: #1F9999;}
         .dlHover{position:absolute;z-index: 9999;display: block;}
         .aw-logo{width:110px;height:40px;margin:9px 0 0 0;}
-        .aw-logo a{display:block;width: 96px;height: 36px;background:url('/Img/16sucai_201407280933.jpg') no-repeat;}
-        .aw-logo h1{height:25px;line-height:25px;margin:-2px 0 2px 0;font-size:14px;}
+        .aw-logo a{display:block;width: 96px;height: 36px;background:url('Img/gamersky_068origin_135_2014125155836.jpg') no-repeat;}
+        .aw-logo h1{height:25px;line-height:25px;margin:-2px 0 2px 0;font-size:14px;white-space: pre-wrap}
+        /*html,body{height:100%;}*/
+        .nav-slide-show {
+            overflow: hidden;
+            -webkit-transform: translate3d(60%,0,0)
+        }
+
+        .recent_blog{
+            text-align: right;
+            font-size: small;
+        }
+
+        .excerpt {
+            padding: 50px 20px 20px 30px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .datetime {
+            width: 60px;
+            background: #00BCF2;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            color: #FFF;
+            font-size: 14px;
+            font-family: Arial;
+            padding: 8px 0;
+        }
+
+        .tit .titTitle {
+            border-bottom: 1px solid #DFDFDF;
+            padding-bottom: 5px;
+            height: 24px;
+            line-height: 28px;
+            overflow: hidden;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+
+
+        .tit .iititle {
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        /*p {*/
+            /*text-indent: 2em;*/
+        /*}*/
+        .tit .iititle .i2 {
+            /*background-position: 0px -77px;*/
+            margin:0px 10px 0px 20px;
+        }
+        .tit .iititle .i1 {
+            /*background-position: 0px -33px;*/
+        }
+
+
+        .c-con {
+            line-height: 28px;
+            font-size: 14px;
+            margin-top: 5px;
+            border-bottom: 1px dotted #DFDFDF;
+            padding-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+        }
+
+
     </style>
 </head>
 
 
 
-<body>
+<body  style="background-color: #f5f5f5;position:relative;min-height:100%;padding-bottom: 90px">
 
 
-<div class="row" >
-    <nav class="navbar navbar-default" role="navigation" style="width: 100%">
-        <div class="container">
-            <div class="aw-logo">
-                <a href="#"></a>
-            </div>
+    <nav class="navbar navbar-default" role="navigation" style="width: 100%;background-color: #ffffff">
+        <div class="container" >
+                <!--<div class="aw-logo">-->
+                    <!--<a href="#"></a>-->
+                <!--</div>-->
 
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">圣火 </a>
+                <a class="navbar-brand" href="/StationWel.html" style="font: Geneva;font-size: x-large">HolyFire</a>
             </div>
-            <div>
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">首页</a></li>
-                    <li ><a href="">我的开发笔记</a></li>
+
+            <div style="font-size: large">
+                <ul class="nav navbar-nav" style="margin: 0px 0px 0px 30px">
+                    <li class="active" ><a href="StationWel.html">首页</a></li>
+                    <li ><a >各种笔记</a></li>
                     <li ><a href="">生活娱乐</a></li>
-                    <li ><a href="">心情杂谈</a> </li>
+                    <li ><a href="">不要点进来</a> </li>
                     <li ><a href="">关于我</a> </li>
                 </ul>
             </div>
 
         </div>
-
-
-
     </nav>
 
+        <div class="container">
+            <div class="row">
+
+
+            <div class="col-sm-8" >
+                <h3>Clocy 的个人主站</h3>
+
+                <div class="panel panel-default"  style="margin-bottom: 100px">
+                    <!--<div class="panel-heading" style="background-color: ghostwhite">-->
+                        <!--<h3 class="panel-title" >-->
+                            <!--带有 title 的面板标题-->
+                        <!--</h3>-->
+                    <!--</div>-->
+
+                    <div class="panel-body excerpt">
+                        <div class="datetime">2014<br>11-21</div>
+                        <div class="tit">
+                            <h4 class="titTitle"><a href="" title="Blog Title">--- 页脚置底代码</a>
+                            </h4>
+                            <p class="iititle"><span class="i2"><a href="/aboutme" title="Clocy" rel="author">clocy</a></span><span class="i1"><a href="blog/category">category:static</a></span></p>
+                        </div>
+                            <p>
+                        关于页脚置低的方法：
+                        <div style="align-self: center">
+                                <pre style="font-size: smaller;width: 80%; font-family: Serif;"  ><xmp>
+<!-- 父层 -->
+<div id="wapper">
+    <!-- 主要内容 -->
+    <div id="main-content">
+    </div>
+    <!-- 页脚 -->
+    <div id="footer">
+    </div>
 </div>
+
+#wapper{
+    position: relative;   /*重要！保证footer是相对于wapper位置绝对*/
+    height: auto;          /* 保证页面能撑开浏览器高度时显示正常*/
+    min-height: 100%  /* IE6不支持，IE6要单独配置*/
+}
+#footer{
+   position: absolute;  bottom: 0; /* 关键 */
+   left:0; /* IE下一定要记得 */
+   height: 60px;         /* footer的高度一定要是固定值*/
+}
+#main-content{
+   padding-bottom: 60px; /*重要！给footer预留的空间*/
+}
+                    </xmp></pre></div>
+                            </p>
+
+                        <div class="c-bot">
+                            <span class="cb_bq"><a href="blog/tag" rel="tag">Tag:static</a> <a href="TitleHref" style="position: absolute;right: 10%;background: #ccc;">Read More></a>  </span>
+                        </div>
+                    </div>
+
+                    <div id="mainContent">
+
+                    </div>
+
+                </div>
+            </div>
+
+                <script>
+                    $(document).ready(function(){
+                            $("#mainContent").load("/blogIndex");
+                    });
+                </script>
+
+            <div class="col-sm-4">
+
+                <h3>近期文章</h3>
+
+                <div class="panel panel-default">
+                    <div class="panel-body" style="height:230px;">
+                        <div id="resent_title">
+                            <a><p>我很懒，什么都没留下</p></a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <script>
+                    $(document).ready(function(){
+                        $("#resent_title").load("/recent_blog");
+                    });
+                </script>
+
+
+
+                <h3>Tag池</h3>
+                <style>
+                    .tag_pool{
+                        padding-left: 15px;
+                    }
+                </style>
+                <div class="panel panel-default">
+                    <div class="panel-body "style="height:230px;">
+
+                        <span class="tag_pool"><a href="">for_fun</a></span>
+                        <span class="tag_pool">for_fun</span>
+                        <span class="tag_pool">for_fun</span>
+                        <span class="tag_pool">for_fun</span>
+                        <span class="tag_pool">for_fun</span>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
 
 
 <script>
     $(document).ready(function() {
         $("ul li").click(function() {
-            $("ul li").removeClass("active");
+            $("ul li.active").removeClass("active");
+            $(this).addClass("active");
+
         });
-        $(this).addClass("active");
     });
 </script>
 
-
-<div class="container">
-
-
-        <div class="row"></div>
-        <!--<div>-->
-            <!--<ul class="nav navbar-nav">-->
-                <!--<li class="active"><a href="#">iOS</a></li>-->
-                <!--<li><a href="#">SVN</a></li>-->
-                <!--<li class="dropdown">-->
-                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-                        <!--Java-->
-                        <!--<b class="caret"></b>-->
-                    <!--</a>-->
-                    <!--<ul class="dropdown-menu">-->
-                        <!--<li><a href="#">jmeter</a></li>-->
-                        <!--<li><a href="#">EJB</a></li>-->
-                        <!--<li><a href="#">Jasper Report</a></li>-->
-                        <!--<li class="divider"></li>-->
-                        <!--<li><a href="#">分离的链接</a></li>-->
-                        <!--<li class="divider"></li>-->
-                        <!--<li><a href="#">另一个分离的链接</a></li>-->
-                    <!--</ul>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-
-
-    <!--<div class="carousel slide" id="carousel-437777">-->
-        <!--<ol class="carousel-indicators">-->
-            <!--<li data-slide-to="0" data-target="#carousel-437777">&nbsp;</li>-->
-            <!--<li data-slide-to="1" data-target="#carousel-437777">&nbsp;</li>-->
-            <!--<li class="active" data-slide-to="2" data-target="#carousel-437777">&nbsp;</li>-->
-        <!--</ol>-->
-
-        <!--<div class="carousel-inner">-->
-            <!--<div class="item"><img alt="" src="26129-holding-a-pokeball-1366x768-digital-art-wallpaper.jpg" />-->
-                <!--<div class="carousel-caption" contenteditable="true">-->
-                    <!--<h4>棒球</h4>-->
-
-                    <!--<p>棒球运动是一种以棒打球为主要特点，集体性、对抗性很强的球类运动项目，在美国、日本尤为盛行。</p>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div class="item"><img alt="" src="green-stars-2560x1440-13140984.jpg" />-->
-                <!--<div class="carousel-caption" contenteditable="true">-->
-                    <!--<h4>冲浪</h4>-->
-
-                    <!--<p>冲浪是以海浪为动力，利用自身的高超技巧和平衡能力，搏击海浪的一项运动。运动员站立在冲浪板上，或利用腹板、跪板、充气的橡皮垫、划艇、皮艇等驾驭海浪的一项水上运动。</p>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div class="item active"><img alt="" src="cubone_has_some_demons_in_his_past.jpg" />-->
-                <!--<div class="c-->
-                <!--arousel-caption" contenteditable="true">-->
-                    <!--<h4>自行车</h4>-->
-
-                    <!--<p>以自行车为工具比赛骑行速度的体育运动。1896年第一届奥林匹克运动会上被列为正式比赛项目。环法赛为最著名的世界自行车锦标赛。</p>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<a class="left carousel-control" data-slide="prev" href="#carousel-437777">&lsaquo;</a> <a class="right carousel-control" data-slide="next" href="#carousel-437777">&rsaquo;</a></div>-->
-    <!---->
-<!--</div>-->
-    </div>
 </body>
+
+<!--style for footer-->
+<style>
+    .footer {
+        position:absolute;
+        bottom:0;
+        left:0;
+        width: 100%;
+        clear: both;
+        height: 40px;
+        padding: 40px 30px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        color: #888;
+        background-color: #444;
+    }
+</style>
+
+<footer class="footer"> <div class="container"> <p>版权所有，保留一切权利！ · ©2015 <a href="/">It's Clocy</a></p> </div> </footer>
 </html>

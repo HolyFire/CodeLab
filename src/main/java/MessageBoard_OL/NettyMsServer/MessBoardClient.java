@@ -3,7 +3,6 @@ package MessageBoard_OL.NettyMsServer;
 import MessageBoard_OL.App.DouBanUser;
 import MessageBoard_OL.App.GuestUser;
 import MessageBoard_OL.App.QQUser;
-import MessageBoard_OL.Config.Routes;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import io.netty.bootstrap.Bootstrap;
