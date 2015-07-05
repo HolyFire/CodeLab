@@ -1,53 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta property="qc:admins" content="172005655516125655" />
     <title>~~~~~~~~留言板~~~~~~~~</title>
-    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
+    <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery-2.1.1.min.js"></script>
+    <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+    <!--<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
 </head>
+<body>
 
-<div class="container">
-
+<div class="container" style="font-size: large">
+    <!--<span class="visible-md">✔ 在中型设备上可见</span>-->
+    <!--<span class="hidden-lg">✔ 在大型设备上可见</span>-->
+    <!--<span class="visible-lg">✔ 在大型设备上可见</span>-->
+    <!--<span class="visible-sm">✔ 在小型设备上可见</span>-->
 
 
     <div class="row">
-
-        <div class="row" style="background-color: lightyellow">
+        <div class="row" style="background-color: lightgray;">
+            <div class="col-xs-12">
                 <h1>DRRR!</h1>
+
+            </div>
         </div>
+
 
 
     <div class="row">
-        <div class="col-md-8" style="background-color: burlywood;font-weight: bold">
+        <div class="col-xs-12 col-md-8 col-sm-12" style="background-color: transparent;font-weight: bold;color: saddlebrown">
             <h3>Freedom MessageBoard</h3>
-            <p><br /></p>
-            <p>留点什么东西在登陆界面呢~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~会不会屏呢，还差一点点了。</p>
-            <p>看来是不会超屏了</p>
-        </div>
-        <div class="col-md-4">
+<table style="height: 450px;width: 100%;">
+            <p>>>>>>还在等什么,快进来看看吧<<<<<</p>
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-8">
-                    <div class="panel panel-default">
-                        <div class="panel-body" style="background-color: chocolate">
-                            <form role="form" method="post" action="/login" name="myform" onsubmit="checkpost()" style="color: whitesmoke">
+                <div style="position:absolute; width:100%; height:100%; z-index:-1">
+                    <img src="minecraftgppnyno.jpg" height="450" width="100%">
+                </div>
+            </div>
+</table>
+        </div>
+
+        <div class="col-xs-12 col-md-4 col-sm-12">
+            <div class="row">
+                <div class="col-xs-1 col-md-3 col-sm-3"></div>
+                <div class="col-xs-9 col-md-8 col-sm-6">
+                    <h3>>Sssssssssss....<</h3>
+                    <p><br/></p>
+                    <p><br/>
+                    <div class="panel panel-default" style="border: none">
+                        <div class="panel-body" style="background-color: saddlebrown;font-size: large">
+
+                            <!-- method="post"  action="/login" name="myform" onsubmit="checkpost()"-->
+                            <form role="form" style="color: whitesmoke">
                                 <br />
                                 <h4>登陆 DRRR! 账号</h4><br />
                                 <label class="sr-only" for="username">用户名</label>
                                 <input type="text" class="form-control" placeholder="用户名" name="username" id="username"  style="color: whitesmoke; border-color: black;background-color: burlywood"/><br />
-
                                 <input type="password" class="form-control" placeholder="密码" name="pw" id="pw" style="border-color: black; background-color: burlywood" /><br />
-                                <button type="submit" class="btn btn-default btn-block" style="border-color: black; background-color: papayawhip;font-weight: bolder">登陆</button><br />
+                                <button type="button" id="login" onclick="loadXMLDOC()" class="btn btn-default btn-block"  style="border-color: black; background-color: papayawhip;font-weight: bolder">登陆</button><br />
 
-                                <div class="row" style="text-align: center;color: whitesmoke">
+                                <div class="row" style="text-align: center;color: whitesmoke;font-size: large">
                                     <p>还没有账号么？亲！</p>
                                     <a class="btn btn-default btn-lg" href="signup.html" style="font-weight: bolder" role="button">立即注册</a>
+                                    <p><a href=https://www.douban.com/service/auth2/auth?client_id=09506d93f402cc441bf148bbdc0864cc&redirect_uri=http://holyfire.me/accesstoken_douban&response_type=code&scope=shuo_basic_r,shuo_basic_w,douban_basic_common><img src="favicon_16x16.png"> </a>
+                                        <a href=https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101165433&redirect_uri=holyfire.me/accesstoken_QQ&state=1024><img src="Connect_logo_1.png" ></a>
+                                   <br/> 游客入口
+                                    </p>
+
+
                                 </div>
 
                             </form>
+
+
                         </div>
                     </div>
 
@@ -56,10 +89,9 @@
 
         </div>
     </div>
-
     </div>
 </div>
-
+</body>
 
 
 
@@ -79,7 +111,7 @@
             var expires = "; expires="+date.toGMTString();
         }
         else var expires = "";
-        document.cookie = name+"="+value+expires+";";
+        document.cookie = name+"="+encodeURIComponent(value)+expires+";";
     }
     //读取cookie
     function GetCookie(name)
@@ -90,7 +122,7 @@
         {
             var c = ca[i];
             while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            if (c.indexOf(nameEQ) == 0) return  decodeURIComponent(c.substring(nameEQ.length,c.length));
         }
         return null;
     }
@@ -106,10 +138,75 @@
 
     function checkpost(){
         SetCookie("username",document.getElementById("username").value,0);
-        document.cookie = "password="+document.getElementById("pw").value;
+//        document.cookie = "password="+document.getElementById("pw").value;
 
 //        SetCookie("password",document.getElementById("pw").value,0);
         return true;
+    }
+//
+//    $(document).ready(function(){
+//        $("#login").click(function(){
+//            $.post("/login",
+//                    {
+//                        username:$("#username").val(),
+//                        pw:$("#pw").val()
+//                    },
+//                    function(data,status){
+//                        alert("数据：" + data + "\n状态：" + status);
+//                    });
+//        });
+//    });
+
+
+    function loadXMLDOC(){
+
+        if(document.getElementById("username").value==""||document.getElementById("pw").value==""){
+            alert("账号和密码不能为空");
+            return;
+        }
+        var xmlhttp=null;
+        if(window.XMLHttpRequest){
+            //code for IE7+ firefox, Chorme, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+//            alert("new xmlhttprequest");
+        }
+        else{
+            //code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+//        alert("进入函数");
+
+        var xmlhttpUrl = "flash.aspx?ajax=refresh&"+Math.random();
+        xmlhttp.open("POST","/login?rand="+Math.random(),true);
+//        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+//        xmlhttp.send(document.getElementsByName("myform"))
+//        xmlhttp.setRequestHeader("Pragma", "no-cache");
+        var username=document.getElementById("username").value;
+        var pw=document.getElementById("pw").value;
+//        alert(xmlhttp.readyState);
+
+        xmlhttp.send("username="+username+"&pw="+pw);
+
+//        alert(xmlhttp.readyState);
+
+        xmlhttp.onreadystatechange=function(){
+//            alert("进入onreadystatechange"+xmlhttp.status+xmlhttp.readyState+xmlhttp.getAllResponseHeaders());
+            if(xmlhttp.readyState==4&&xmlhttp.status==200){
+//                alert(xmlhttp.responseText);
+
+                if(xmlhttp.responseText=="index"){
+                    SetCookie("username",document.getElementById("username").value,0);
+//                    alert(xmlhttp.responseText);
+                    window.location="/index.html";
+                }else{
+                    alert(xmlhttp.responseText);
+                }
+                xmlhttpUrl=null;
+            }
+        }
+
+        //TODO
     }
 
 

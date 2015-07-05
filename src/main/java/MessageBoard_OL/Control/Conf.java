@@ -14,10 +14,22 @@ public class Conf {
 //        StringBuilder sb=new StringBuilder("/app/Web");
 
 //        StringBuilder sb=new StringBuilder(Thread.currentThread().getContextClassLoader().getResource("")+"Web");
-        if(uri.equals("/")){
-            sb.append("/index.html");
+
+//        set index
+        if(uri.equals("/")||uri.equals("/home")){
+//            sb.append("/index.html");
+            sb.append("/StationWel.html");
             return sb.toString();
         }
+        if(uri.equals("/collection")){
+            sb.append("/ViewModel/collection.html");
+            return sb.toString();
+        }
+        if(uri.equals("/add")){
+            sb.append("/ControlPage.html");
+            return  sb.toString();
+        }
+
         if(!uri.equals("/")){
             sb.append(uri);
 

@@ -50,6 +50,7 @@ public class RequestConf {
 
 
         //            处理POST请求
+
         if (request.getMethod().equals(HttpMethod.POST)) {
 
             System.err.println("In read POST");
@@ -62,7 +63,7 @@ public class RequestConf {
                 HttpDataFactory factory = new DefaultHttpDataFactory(DefaultHttpDataFactory.MINSIZE);
                 HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(factory, request);
                 List list = decoder.getBodyHttpDatas();
-                System.err.println(list);
+//                System.err.println(list);
                 if (list.get(0).toString().equals("chatText=") || list.get(0).toString().equals("Mixed: chatText=")) {
                     System.out.println("内容为空" + list.get(0).toString());
                     sb.append("<script>");
@@ -122,6 +123,7 @@ public class RequestConf {
                 ctx.channel().write(response);
                 ctx.channel().writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
 
+                flag=true;
                 return;
 
 
@@ -302,7 +304,7 @@ public class RequestConf {
                 HttpPostRequestDecoder decoder = new HttpPostRequestDecoder(factory, request);
                 List list = decoder.getBodyHttpDatas();
 
-                System.err.println(list + "##############");
+//                System.err.println(list + "##############");
                 if (list.get(0).toString().equals("name=") || list.get(1).toString().equals("password=")) {
 
                 } else {
@@ -359,6 +361,72 @@ public class RequestConf {
                 ctx.channel().flush();
 
             }
+
+//         Blog  add Essay
+            if(method.equals("/push_content")){
+                HttpDataFactory httpDataFactory=new DefaultHttpDataFactory(false);
+                HttpPostRequestDecoder decoder=new HttpPostRequestDecoder(httpDataFactory,request);
+                List list = decoder.getBodyHttpDatas();
+                System.out.println(list);
+                MyBlog myBlog=new MyBlog();
+                boolean tag=true;
+                for(Object str :list){
+                    String content=str.toString().trim();
+                    System.out.println(content+"！");
+                    if(1==1){
+                        tag=false;
+                        continue;
+                    }
+                    if(content.startsWith("title=")){
+                        System.err.println(content);
+                        if(content.length()=="title=".length()){
+                            tag=false;
+                        }else{
+                            String temp=content.substring("title=".length());
+                            myBlog.setTitle(temp);
+//                            myBlog.setTitle(content.substring("title=".length()));
+//                            System.err.println("sub"+content.substring("title=".length()));
+//                            System.out.println("$"+myBlog.getTitle());
+                        }
+                    }
+                    if(content.startsWith("tag=")){
+                        System.err.println(content);
+                        if(content.length()=="tag=".length()){
+                            tag=false;
+
+                        }else{
+                            String temp=content.substring("tag=".length());
+                            myBlog.setTag(temp);
+//                            myBlog.setTitle(content.substring("tag=".length()));
+//                            System.err.println("sub"+content.substring("tag=".length()));
+//                            System.out.println("$"+myBlog.getTag());
+                        }
+                    }
+                    if(content.startsWith("BlogText=")){
+                        System.err.println(content);
+                        if(content.length()=="BlogText=".length()){
+                            tag=false;
+
+                        }else{
+
+                            String temp=content.substring("BlogText=".length());
+                            myBlog.setBlogText(temp);
+//                            myBlog.setTitle(content.substring("BlogText=".length()));
+//                            System.err.println("sub"+content.substring("BlogText=".length()));
+//                            System.out.println("$"+myBlog.getBlogText());
+                        }
+                    }
+                }
+                if(!tag){
+                    new Routes(ctx,"/add");
+                }else {
+                    db.writeBlog(myBlog);
+                    new Routes(ctx,"/");
+                }
+            flag=false;
+
+            }
+
 
         }
 
@@ -525,7 +593,7 @@ public class RequestConf {
 
         }
 
-//        Myblog Index
+//        Myblog Index get
         if(uri.getPath().equals("/blogIndex")||uri.getPath().equals("/blogIndex/1")){
 
 
@@ -547,11 +615,18 @@ public class RequestConf {
                     Date date=myBlog.getCreatetime();
                     System.out.println(date);
                     String year=new SimpleDateFormat("yyyy").format(date);
-                    int month=Integer.parseInt(new SimpleDateFormat("mm").format(date))+1;
+                    int monthtemp=Integer.parseInt(new SimpleDateFormat("MM").format(date))+1;
+                    String month;
+                    if(monthtemp<10){
+                        month="0"+String.valueOf(monthtemp);
+
+                    }else {
+                        month=String.valueOf(monthtemp);
+                    }
                     String day=new SimpleDateFormat("dd").format(date);
                     String title=myBlog.getTitle();
                     String category=myBlog.getCategory();
-                    String blogContent=myBlog.getBlogText();
+                    String blogContent= myBlog.getBlogText();
                     String tag=myBlog.getTag();
                     int id=myBlog.getId();
 //                    String id=myBlog.setId();
@@ -563,14 +638,13 @@ public class RequestConf {
                             "                        <div class=\"tit\">\n" +
                             "                            <h4 class=\"titTitle\"><a href=\"/blue/"+id+"\" title=\""+title+"\">---"+title+"</a>\n" +
                             "                            </h4>\n" +
-                            "                            <p class=\"iititle\"><span class=\"i2\"><a href=\"/aboutme\" title=\"Clocy\" rel=\"author\">clocy</a></span><span class=\"i1\"><a href=\"/category/"
-                            +category+"\">"+category+"</a></span></p>\n" +
+                            "                            <p class=\"iititle\"><span class=\"i2\"><a href=\"/aboutme\" title=\"Clocy\" rel=\"author\">clocy</a></span></p>\n" +
                             "                        </div>\n" +
                             "                        <div class=\"c-con\">\n" +
-                            "                            <p>"+blogContent+"</p>\n" +
+                            "                            <p><div class=\"blog_text\">"+blogContent+"</div></p>\n" +
                             "                        </div>\n" +
                             "                        <div class=\"c-bot\">\n" +
-                            "                            <span class=\"cb_bq\"><a href=\"/tag/"+tag+"\" rel=\"tag\">"+tag+"</a> <a href=\"/blue/"+id+"\" style=\"position: absolute;right: 10%;background: #ccc;\">Read More></a>  </span>\n" +
+                            "                            <span class=\"cb_bq\"><a href=\"/tag/"+tag+"\" rel=\"tag\">"+tag+"</a> <a class=\"readmore\" href=\"/blue/"+id+"\" >Read More></a>  </span>\n" +
                             "                        </div>\n" +
                             "                    </div>\n");
 
@@ -586,7 +660,7 @@ public class RequestConf {
             response.headers().set(HttpHeaders.Names.CONTENT_LENGTH, buf.readableBytes());
             ctx.channel().write(response);
             ctx.channel().writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
-
+            flag=false;
 
 
         }
@@ -617,7 +691,7 @@ public class RequestConf {
                     map.put("tag",blog.getTag());
                     map.put("content",blog.getBlogText());
                     map.put(blog.getCategory(),"active");
-                    String replaceContent=new ModelTrans().keyWordsReplace("/ViewModel/ContentViewModel.html",map);
+                    String replaceContent=ModelTrans.keyWordsReplace("/ViewModel/ContentViewModel.html", map);
                     ByteBuf buf=copiedBuffer(replaceContent,CharsetUtil.UTF_8);
                     HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
                     response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
@@ -631,18 +705,189 @@ public class RequestConf {
                     e.printStackTrace();
                 }
             }
+            flag=false;
         }
 
 
 //        通过category分类 页面
 
         if(uri.getPath().startsWith("/category/")){
+            Pattern pattern=Pattern.compile("/category/(.*)");
+            Matcher m=pattern.matcher(uri.getPath());
+            m.find();
+            String category=m.group(1).trim();
+            if(category.matches("[\\w_]+")){
+                StringBuilder sb=new StringBuilder();
+                MyBlog blog;
+                int row= 0;
+                int num=0;
+                try {
+                    num = db.readBlogNum("category",category);
+                    if(num!=0){
+                        int blog_count=0;
+                        HashMap<String,String> map=new HashMap<String, String>();
+                        for(int i=0;i<num;i++){
+                            blog= db.readBlogByColumn("category",category,0);
+                            map.put("category",blog.getCategory());
+                            sb.append(ModelTrans.keyWordsReplace("/ViewModel/search_by_category.html", map));
+                            blog_count=blog_count+1;
+                            if(blog_count>=5){
+                                break;
+                            }
+                        }
+                    }else {
+                        HashMap<String,String> map=new HashMap<String, String>();
+                        map.put("category",category);
+                        sb.append(ModelTrans.keyWordsReplace("/ViewModel/content_null.html", map));
+                    }
 
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ByteBuf buf=copiedBuffer(sb,CharsetUtil.UTF_8);
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+                response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
+                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+                ctx.write(response);
+                ctx.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
+
+                flag=false;
+            }
+
+            flag=false;
+        }
+
+
+//        tagIndex tag页中的正文
+        if(uri.getPath().startsWith("/tagIndex/")){
+            Pattern pattern=Pattern.compile("/tagIndex/(.*)");
+            Matcher m=pattern.matcher(uri.getPath());
+            m.find();
+            String tag=m.group(1).trim();
+            if(tag.matches("[^\\*\"!\\(\\)]+")){
+                System.out.println(tag+"ddddddddddddddddddddddddd");
+                StringBuilder sb=new StringBuilder();
+                MyBlog myBlog;
+                int row= 0;
+                int num=0;
+                try {
+                    num = db.readBlogNum("tag",tag);
+                    if(num!=0){
+                        int blog_count=0;
+                        for(int i=0;i<num;i++){
+                            HashMap<String,String> map=new HashMap<String, String>();
+                            myBlog= db.readBlogByColumn("tag",tag,i);
+
+                            Date date=myBlog.getCreatetime();
+//                            System.out.println(date);
+                            String year=new SimpleDateFormat("yyyy").format(date);
+//                            System.err.println(new SimpleDateFormat("MM").format(date));
+                            int monthtemp=Integer.parseInt(new SimpleDateFormat("MM").format(date));
+//                            System.err.println(monthtemp);
+                            String month;
+                            if(monthtemp<10){
+                                month="0"+String.valueOf(monthtemp);
+                            }else {
+                                month=String.valueOf(monthtemp);
+                            }
+                            String day=new SimpleDateFormat("dd").format(date);
+                            String title=myBlog.getTitle();
+//                            String category=myBlog.getCategory();
+                            String blogContent=myBlog.getBlogText();
+                            tag=myBlog.getTag();
+                            int id=myBlog.getId();
+
+                            map.put("tag",myBlog.getTag());
+                            map.put("month",month);
+                            map.put("day",day);
+                            map.put("title",title);
+//                            map.put("category",category);
+                            map.put("blogContent",blogContent);
+                            map.put("id",String.valueOf(id));
+                            map.put("year",String.valueOf(year));
+
+
+                            sb.append(ModelTrans.keyWordsReplace("/ViewModel/tagIndex.html", map));
+                            blog_count=blog_count+1;
+                        }
+                    }else {
+
+                        sb.append("GG");
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ByteBuf buf=copiedBuffer(sb,CharsetUtil.UTF_8);
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+                response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
+                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+                ctx.write(response);
+                ctx.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
+
+            }else{
+                new Routes(ctx,"/collection");
+                System.err.println("has !*()");
+            }
+
+            flag=false;
         }
 
 //      通过tag分类 页面
-        if(uri.getPath().startsWith("/tag/")){
 
+        if(uri.getPath().startsWith("/tag/")){
+            System.err.println(uri.getPath()+"中文请求");
+            Pattern pattern=Pattern.compile("/tag/(.*)");
+            Matcher m=pattern.matcher(uri.getPath());
+            m.find();
+            String tag=m.group(1).trim();
+            if(tag.matches("[^\\*\"!\\(\\)]+")){
+                System.out.println(tag+"ddddddddddddddddddddddddd");
+                StringBuilder sb=new StringBuilder();
+//                MyBlog blog;
+                int row= 0;
+                int num=0;
+                try {
+                    num = db.readBlogNum("tag",tag);
+                    if(num!=0){
+//                        int blog_count=0;
+                        HashMap<String,String> map=new HashMap<String, String>();
+//                        for(int i=0;i<num;i++){
+//                            blog= db.readBlogByColumn("tag",tag,0);
+                            map.put("tag",tag);
+                            sb.append(ModelTrans.keyWordsReplace("/ViewModel/search_by_tag.html", map));
+//                            blog_count=blog_count+1;
+
+//                        }
+                    }else {
+//                        HashMap<String,String> map=new HashMap<String, String>();
+//                        map.put("category",tag);
+//                        sb.append(ModelTrans.keyWordsReplace("/ViewModel/content_null.html", map));
+                        sb.append("GG");
+                    }
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                ByteBuf buf=copiedBuffer(sb,CharsetUtil.UTF_8);
+                HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+                response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
+                response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+                ctx.write(response);
+                ctx.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
+
+            }else{
+                new Routes(ctx,"/collection");
+                System.err.println("has !()*");
+            }
+
+            flag=false;
         }
 
 //      最近5篇文章
@@ -661,7 +906,8 @@ public class RequestConf {
                    }
                     map.put("title",blog.getTitle());
                     map.put("date", Date_Reader.getRealDate(blog.getCreatetime()));
-                    sb.append(new ModelTrans().keyWordsReplace("/ViewModel/recent_blog.html",map));
+                    map.put("href","/blue/"+blog.getId());
+                    sb.append(ModelTrans.keyWordsReplace("/ViewModel/recent_blog.html", map));
                     blog_count=blog_count+1;
                     if(blog_count>=5){
                         break;
@@ -680,21 +926,66 @@ public class RequestConf {
             ctx.write(response);
             ctx.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
 
+            flag=false;
 
 
         }
 
 //      tag池
-        if(uri.getPath().equals("tag_pool")){
+        if(uri.getPath().equals("/tag_pool")){
             StringBuilder sb =new StringBuilder();
-            HashSet<String> tagPool= db.readTagPool();
-            Iterator iterator=tagPool.iterator();
-            while (iterator.hasNext()){
-
+            ArrayList<String> tagPool= db.readTagPool();
+            for (String tag : tagPool) {
+                System.out.println(tag+"~@############");
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put("tag_url", "/tag/" + tag);
+                map.put("tag", tag);
+                try {
+                    String tag_view = ModelTrans.keyWordsReplace("/ViewModel/tag_pool.html", map);
+                    System.out.println(tag_view);
+                    sb.append(tag_view);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+            ByteBuf buf=copiedBuffer(sb.toString(),CharsetUtil.UTF_8);
+            HttpResponse response=new DefaultHttpResponse(HTTP_1_1,HttpResponseStatus.OK);
+            response.headers().set(HttpHeaders.Names.CONTENT_TYPE,"text/html; charset=UTF-8");
+            response.headers().set(HttpHeaders.Names.CONTENT_LENGTH,buf.readableBytes());
+            ctx.write(response);
+            ctx.writeAndFlush(buf).addListener(ChannelFutureListener.CLOSE);
+            flag=false;
 
         }
 
+//      home
+        if(uri.getPath().equals("/home")){
+            System.out.println("ddddddddddddddddddddddd");
+            new Routes(ctx,request);
+            flag=false;
+
+        }
+        if(uri.getPath().equals("/collection")){
+            new Routes(ctx,request);
+            flag=false;
+
+        }
+
+//add page
+        if(uri.getPath().equals("/add")){
+            new Routes(ctx,request);
+            flag=false;
+        }
+
+//        aboutme
+        if(uri.getPath().equals("/aboutme")){
+            new Routes(ctx,"/ViewModel/aboutme.html");
+            flag=false;
+        }
+        if(uri.getPath().startsWith("/ViewModel")){
+            flag=false;
+            return;
+        }
 
 
 

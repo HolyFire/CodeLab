@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head lang="en">
-    <!--<link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <!--<script src="/jquery-2.1.1.min.js"></script>-->
-    <!--<script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>-->
-    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery-2.1.1.min.js"></script>
+    <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+    <!--<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+    <!--<link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.4.1.min.css" />-->
+    <!--<script src="/jquerymobile/jquery.mobile-1.4.1.min.js"></script>-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <title>Holy Fire</title>
     <style>
         .aw-logo, .aw-search-box, .aw-top-nav{float: left;}
@@ -17,7 +21,7 @@
         .aw-logo{width:110px;height:40px;margin:9px 0 0 0;}
         .aw-logo a{display:block;width: 96px;height: 36px;background:url('Img/gamersky_068origin_135_2014125155836.jpg') no-repeat;}
         .aw-logo h1{height:25px;line-height:25px;margin:-2px 0 2px 0;font-size:14px;white-space: pre-wrap}
-        /*html,body{height:100%;}*/
+        html,body{min-height:100%;}
         .nav-slide-show {
             overflow: hidden;
             -webkit-transform: translate3d(60%,0,0)
@@ -29,7 +33,7 @@
         }
 
         .excerpt {
-            padding: 50px 20px 20px 30px;
+            /*padding: 50px 20px 20px 30px;*/
             border-bottom: 1px solid #eee;
             overflow: hidden;
         }
@@ -82,98 +86,421 @@
             margin-top: 5px;
             border-bottom: 1px dotted #DFDFDF;
             padding-bottom: 5px;
-            overflow: hidden;
-            text-overflow: ellipsis;
             color: #333;
         }
 
+        /*navigation bar*/
+        nav {
 
+            width: 50%;
+            background-color: #333;
+            text-align: center;
+        }
+
+        nav li {
+            /*display: inline-block;*/
+            list-style-type: none;
+            padding-right: 10px;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: #c0a16b;
+            font-size: 1.5em;
+        }
+
+        nav li a:hover,#menuIcon:hover {
+            color: #DDD;
+        }
+
+        #menuIcon {
+            display: none;
+            color: brown;
+            font-weight: bold;
+            font-size: 2em;
+            text-decoration: none;
+            font-family: Arial;
+        }
+
+        @media screen and (max-width: 1024px) {
+
+            #navbar{
+                height: 50%;
+
+            }
+            nav ul {
+                display: none;
+                padding: 0;
+                margin: 0 5px;
+            }
+
+            #menuIcon {
+                font-size: 2.5rem;
+                display:inline-block;
+                text-align: right;
+                position: fixed;
+                top: 0;
+                right: 0;
+                padding: 5px 10px;
+
+                /*border-bottom: 1px #000000 solid;*/
+            }
+
+
+
+        }
+
+        .div-background{
+
+            /*background: url("/Img/skyrim00001.jpg") no-repeat bottom fixed transparent;*/
+
+            /*background-color: papayawhip;*/
+            max-width: 100%;
+            height: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.25;
+
+        }
+
+
+
+        body{
+            font: normal 100% Helvetica, Arial, sans-serif;
+            /*background-color: #f5f5f5;*/
+            position:relative;
+            min-height:100%;
+            padding-bottom: 70px;
+
+        }
+
+        .my_hd{
+            height: 325px;
+            overflow: hidden;
+            position: relative;
+            background: url("/Img/head_BG.png");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+        }
+        .hd_cont{
+            padding-left: 3%;
+            top: 80px;
+            left: 20%;
+            width: 100%;
+            height: 160px;
+            position: absolute;
+        }
+        .avatar_box{
+            width: 15%;
+            overflow: hidden;
+        }
+        .avatar{
+            display: block;
+            top: 85px;
+            left: 3%;
+            width: 180px;
+            height: 180px;
+            background: #aaa;
+            border: 5px #fff solid;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+            overflow: hidden;
+            position: absolute;
+        }
+        #space_title{
+            display: block;
+            margin-bottom: 15px !important;
+            height: 38px;
+            font-size: 38px;
+            line-height: 38px;
+            color: lightcyan;
+            text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+            word-wrap: break-word;
+            font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+        }
+    #space_title_description{
+        display: block;
+        font-size:20px;
+        color: lightcyan;
+        word-wrap:break-word;
+    }
+    .hd_nav{
+        width:60px;
+        height: 60px;
+        position: relative;
+        display: block;
+        top:20px;
+        left:60%;
+        margin-left: 5px;
+    }
+
+        @media screen and (max-width: 960px){
+            .avatar{
+                display: none;
+            }
+            .hd_cont{
+                top:40px;
+                left:5%;
+            }
+            .hd_nav{
+                left:85%;
+                top:10px;
+                position: fixed;
+                z-index: 666;
+            }
+            .right_content{
+                display: none;
+            }
+            .left_content{
+                width:100% !important;
+            }
+        }
+        .main_content{
+            /*margin-top: 40px;*/
+            border-top: solid 1px lightgrey;
+        }
+        .left_content{
+            position: relative;
+            float: left;
+            width:70%;
+            /*border-right:solid 1px lightgrey;*/
+            margin-bottom: 20px;
+            padding-left: 30px;
+            background-color: palegoldenrod;
+
+        }
+        .right_content{
+            /*margin-top: 50px;*/
+            margin-bottom: 20px;
+            margin-right: 30px;
+            padding-left: 20px;
+            /*left: 75%;*/
+            position: relative;
+            float: right;
+            width:25%;
+            background-color: palegoldenrod;
+            min-height: 100%;
+            /*border:solid 1px lightgrey;*/
+            /*background-color: gray;*/
+
+        }
+        .clear{
+            clear:both
+        }
+
+        .tag_title{
+            text-align: center;
+            height: 35px;
+            /*border-radius: 0 0 5px 5px;*/
+            /*border-bottom: solid 1px lightgrey;*/
+            /*box-sizing: border-box;*/
+            color: dodgerblue;
+            font-size: 34px;
+        }
+        .my_name{
+            height: 40px;
+            background-color: #001b02;
+            color: #f5f5f5;
+            font-size: 30px;
+            padding-left: 35px;
+        }
+
+        .blog_text{
+            color: #393939;
+            background-color: darkgrey;
+            height: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .readmore{
+            position: absolute;
+            right: 10%;
+            width: 110px;
+            background: #ccc;
+            transition:width 1s;
+            -moz-transition:width 1s; /* Firefox 4 */
+            -webkit-transition:width 1s; /* Safari and Chrome */
+            -o-transition:width 1s; /* Opera */
+         }
+        .readmore:hover{
+            width:150px;
+        }
     </style>
 </head>
 
 
 
-<body  style="background-color: #f5f5f5;position:relative;min-height:100%;padding-bottom: 90px">
+<body class="div-background" >
 
 
-    <nav class="navbar navbar-default" role="navigation" style="width: 100%;background-color: #ffffff">
-        <div class="container" >
+<div class="my_hd">
+    <div class="avatar_box">
+    <div class="avatar">
+        <img src="/Img/avatar.jpeg" style="width: 100%;">
+    </div>
+    </div>
+    <div class="hd_cont">
+        <h2 id="space_title">不如自挂东南枝</h2>
+        <p3 id="space_title_description">懒人成长记——心灵鸡汤已经阻止不了我了</p3>
+        <div class="hd_nav">
+            <a href="/collection"><canvas id="myCanvas" width="50" height="50"></canvas></a>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    //for the navigation button
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    cxt.beginPath();
+    cxt.arc(25,25,25,0,Math.PI*2,true);
+    cxt.fillStyle="lightblue";
+    cxt.closePath();
+    cxt.fill();
+    cxt.font = "30px Courier New";
+    cxt.fillStyle="lightcyan";
+    //从坐标点(50,50)开始绘制文字
+    cxt.fillText("归", 9, 35);
+</script>
+
+
+<!--<div style="filter:alpha(Opacity=60);-moz-opacity:0.6;opacity: 0.6; background:#000;">-->
+<!--<nav class="navbar navbar-default" role="navigation" style="height: 8%; width: 100%;background-color: #ffffff; z-index:9999;position: fixed;top:0; left:0; ">-->
+
+    <!--<div class="container" id="navbar" >-->
                 <!--<div class="aw-logo">-->
                     <!--<a href="#"></a>-->
                 <!--</div>-->
 
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/StationWel.html" style="font: Geneva;font-size: x-large">HolyFire</a>
-            </div>
 
-            <div style="font-size: large">
-                <ul class="nav navbar-nav" style="margin: 0px 0px 0px 30px">
-                    <li class="active" ><a href="StationWel.html">首页</a></li>
-                    <li ><a >各种笔记</a></li>
-                    <li ><a href="">生活娱乐</a></li>
-                    <li ><a href="">不要点进来</a> </li>
-                    <li ><a href="">关于我</a> </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-
-        <div class="container">
-            <div class="row">
+            <!--<div class="navbar-header" >-->
+                <!--<a class="navbar-brand" href="/StationWel.html" style="font: Geneva;font-size: 3em">HolyFire</a>-->
+            <!--</div>-->
 
 
-            <div class="col-sm-8" >
-                <h3>Clocy 的个人主站</h3>
+        <!--<div style="font-size: 1em">-->
+                <!--<ul class="nav navbar-nav"  style="margin: 0px 0px 0px 30px">-->
 
-                <div class="panel panel-default"  style="margin-bottom: 100px">
+                    <!--<li class="" ><a href="/StationWel.html">首页</a></li>-->
+                    <!--<li class="&begin:active_2:end&"><a href="/category/note">各种笔记</a></li>-->
+                    <!--<li class="&begin:active_3:end&"><a href="/category/for_fun">生活娱乐</a></li>-->
+                    <!--<li class="&begin:active_4:end&"><a href="/category/scrawl">不要点进来</a> </li>-->
+                    <!--<li class="&begin:active_5:end&"><a href="/category/test">关于我</a> </li>-->
+                <!--</ul>-->
+            <!--</div>-->
+
+
+    <!--</div>-->
+<!--</nav>-->
+
+
+
+<script type="text/javascript">
+    $(function() {
+        $("#menuIcon,nav ul li").click(function() {
+            if ($("#menuIcon").is(":visible")) { //防止宽屏上点击
+                $("nav ul").toggle(300);
+            };
+        });
+    })
+</script>
+
+
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div id="nav1" style="display: none;" align="right" >-->
+                    <!--<nav>-->
+                        <!--<ul>-->
+                            <!--<li>-->
+                                <!--<a href="#">Home</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#">Articles</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#">Gallery</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#">Forum</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#">About</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</nav>-->
+                <!--</div>-->
+
+
+            <!--<div class="col-md-8 col-sm-12" style="position: relative; margin-top: 8%" >-->
+
+    <div class="my_name">Clocy </div>
+
+
+        <div class="main_content">
+            <div class="left_content">
+
+
+                <!--<div class="panel panel-default"  style="margin-bottom: 100px;">-->
+                <div class="blog_description" style="margin-bottom: 100px;" >
                     <!--<div class="panel-heading" style="background-color: ghostwhite">-->
                         <!--<h3 class="panel-title" >-->
                             <!--带有 title 的面板标题-->
                         <!--</h3>-->
                     <!--</div>-->
 
-                    <div class="panel-body excerpt">
-                        <div class="datetime">2014<br>11-21</div>
-                        <div class="tit">
-                            <h4 class="titTitle"><a href="" title="Blog Title">--- 页脚置底代码</a>
-                            </h4>
-                            <p class="iititle"><span class="i2"><a href="/aboutme" title="Clocy" rel="author">clocy</a></span><span class="i1"><a href="blog/category">category:static</a></span></p>
-                        </div>
-                            <p>
-                        关于页脚置低的方法：
-                        <div style="align-self: center">
-                                <pre style="font-size: smaller;width: 80%; font-family: Serif;"  ><xmp>
+                    <!--<div class="panel-body excerpt" style="width: 100%">-->
+                        <!--<div class="datetime">2014<br>11-21</div>-->
+                        <!--<div class="tit">-->
+                            <!--<h4 class="titTitle"><a href="" title="Blog Title">--- 页脚置底代码</a>-->
+                            <!--</h4>-->
+                            <!--<p class="iititle"><span class="i2"><a href="" title="Clocy" rel="author">clocy</a></span><span class="i1"><a href="">category:static</a></span></p>-->
+                        <!--</div>-->
+                        <!--<div class="c-con">-->
+                            <!--<p>-->
+                        <!--关于页脚置低的方法：-->
+                            <!--<div class="blog_text" style="align-self: center"><xmp>-->
 <!-- 父层 -->
-<div id="wapper">
+<!--<div id="wapper">-->
     <!-- 主要内容 -->
-    <div id="main-content">
-    </div>
-    <!-- 页脚 -->
-    <div id="footer">
-    </div>
-</div>
+    <!--<div id="main-content">-->
+    <!--</div>-->
+     <!--页脚 -->
+    <!--<div id="footer">-->
+    <!--</div>-->
+<!--</div>-->
 
-#wapper{
-    position: relative;   /*重要！保证footer是相对于wapper位置绝对*/
-    height: auto;          /* 保证页面能撑开浏览器高度时显示正常*/
-    min-height: 100%  /* IE6不支持，IE6要单独配置*/
-}
-#footer{
-   position: absolute;  bottom: 0; /* 关键 */
-   left:0; /* IE下一定要记得 */
-   height: 60px;         /* footer的高度一定要是固定值*/
-}
-#main-content{
-   padding-bottom: 60px; /*重要！给footer预留的空间*/
-}
-                    </xmp></pre></div>
-                            </p>
+<!--#wapper{-->
+    <!--position: relative;   /*重要！保证footer是相对于wapper位置绝对*/-->
+    <!--height: auto;          /* 保证页面能撑开浏览器高度时显示正常*/-->
+    <!--min-height: 100%  /* IE6不支持，IE6要单独配置*/-->
+<!--}-->
+<!--#footer{-->
+   <!--position: absolute;  bottom: 0; /* 关键 */-->
+   <!--left:0; /* IE下一定要记得 */-->
+   <!--height: 60px;         /* footer的高度一定要是固定值*/-->
+<!--}-->
+<!--#main-content{-->
+   <!--padding-bottom: 60px; /*重要！给footer预留的空间*/-->
+<!--}-->
+                    <!--</xmp>-->
+                    <!--</div>-->
+                            <!--</p>-->
+                        <!--</div>-->
 
-                        <div class="c-bot">
-                            <span class="cb_bq"><a href="blog/tag" rel="tag">Tag:static</a> <a href="TitleHref" style="position: absolute;right: 10%;background: #ccc;">Read More></a>  </span>
-                        </div>
-                    </div>
+                        <!--<div class="c-bot">-->
+                            <!--<span class="cb_bq"><a href="" rel="tag">Tag:static</a> <a><div class="readmore" href="#" >Read More></div></a>  </span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
 
                     <div id="mainContent">
 
@@ -182,83 +509,99 @@
                 </div>
             </div>
 
+
                 <script>
                     $(document).ready(function(){
                             $("#mainContent").load("/blogIndex");
                     });
                 </script>
+            <!--<script>-->
+                <!--$($(".readmore").mouseenter(function(){-->
+                    <!--$(this).animate({-->
+                        <!--width:"+=30px"-->
+                    <!--},500)-->
+                <!--}))-->
+                <!--$($(".readmore").mouseleave(function(){-->
+            <!--//this.find-->
+                    <!--$(this).animate({-->
+                        <!--width:"-=30px"-->
+                    <!--},500)-->
+                <!--}))-->
+            <!--</script>-->
 
-            <div class="col-sm-4">
+            <!--<div class="col-md-4 col-sm-12" style="position: relative; margin-top: 8%" >-->
+            <div class="right_content">
 
-                <h3>近期文章</h3>
+                <!--<h3>近期文章</h3>-->
 
-                <div class="panel panel-default">
-                    <div class="panel-body" style="height:230px;">
-                        <div id="resent_title">
-                            <a><p>我很懒，什么都没留下</p></a>
+                <!--<!--<div class="panel panel-default">-->
+                    <!--<div class="blog_recent">-->
+
+                    <!--<div class="panel-body" style="height:230px;">-->
+                        <!--<div id="recent_title">-->
+                            <!--<a><p>我很懒，什么都没留下</p></a>-->
+                        <!--</div>-->
+
+
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<script>-->
+                    <!--$(document).ready(function(){-->
+                        <!--$("#recent_title").load("/recent_blog");-->
+                    <!--});-->
+                <!--</script>-->
+
+
+
+
+
+                <!--<div class="panel panel-default">-->
+                <div class="blog_tag">
+                    <div class="tag_title">
+                        <h3>Tag池</h3>
+                    </div>
+
+                <!--<div class="panel-body "style="height:230px;">-->
+                <div class="tag_body" style="height:230px;">
+                        <div id="all_tag">
                         </div>
-
-
                     </div>
                 </div>
-
                 <script>
-                    $(document).ready(function(){
-                        $("#resent_title").load("/recent_blog");
+                    $(document).ready(function (){
+                        $("#all_tag").load("/tag_pool");
                     });
                 </script>
 
-
-
-                <h3>Tag池</h3>
-                <style>
-                    .tag_pool{
-                        padding-left: 15px;
-                    }
-                </style>
-                <div class="panel panel-default">
-                    <div class="panel-body "style="height:230px;">
-
-                        <span class="tag_pool"><a href="">for_fun</a></span>
-                        <span class="tag_pool">for_fun</span>
-                        <span class="tag_pool">for_fun</span>
-                        <span class="tag_pool">for_fun</span>
-                        <span class="tag_pool">for_fun</span>
-
-                    </div>
-                </div>
-
             </div>
+            <div class="clear"></div><!-- html注释：清除float产生浮动 -->
+<!--</div>-->
+    <!--</div>-->
+
+
+
+
+
+
+
         </div>
+<!--<p>dddddddddddddddddddddddddddddddddddddddddd</p>-->
 
-
-    </div>
-
-
-
-
-
-<script>
-    $(document).ready(function() {
-        $("ul li").click(function() {
-            $("ul li.active").removeClass("active");
-            $(this).addClass("active");
-
-        });
-    });
-</script>
-
+<!--</div>-->
 </body>
+<footer class="footer"> <div class="container"> <p>版权所有，保留一切权利！ · ©2015 <a href="/">It's Clocy</a></p> </div> </footer>
 
 <!--style for footer-->
 <style>
     .footer {
         position:absolute;
+        /*top:1800px;*/
         bottom:0;
         left:0;
         width: 100%;
         clear: both;
-        height: 40px;
+        height: 70px;
         padding: 40px 30px;
         font-size: 12px;
         line-height: 12px;
@@ -268,5 +611,4 @@
     }
 </style>
 
-<footer class="footer"> <div class="container"> <p>版权所有，保留一切权利！ · ©2015 <a href="/">It's Clocy</a></p> </div> </footer>
 </html>

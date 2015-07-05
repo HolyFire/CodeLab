@@ -21,7 +21,7 @@ import java.util.Properties;
 public class BoardServer {
     static final boolean SSL=System.getProperty("ssl")!=null;
 //    static final int PORT =Integer.parseInt(System.getProperty("port",SSL?"8443":System.getenv("PORT")));
-    static final int PORT =Integer.parseInt(System.getProperty("port",SSL?"8443":"80"));
+    static final int PORT =Integer.parseInt(System.getProperty("port",SSL?"8443":"8080"));
 
     public static void main(String[] args) throws Exception {
         // Configure SSL.

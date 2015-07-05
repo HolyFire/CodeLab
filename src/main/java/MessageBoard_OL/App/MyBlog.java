@@ -9,14 +9,14 @@ public class MyBlog {
     private  int id;
     private String title;
     private String blogText;
-    private String category;
+    private String category=null;
     private String tag;
     private Date createtime;
     private Date updatetime;
 
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {

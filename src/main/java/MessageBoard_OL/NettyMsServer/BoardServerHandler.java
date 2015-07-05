@@ -54,7 +54,7 @@ public class BoardServerHandler extends SimpleChannelInboundHandler<Object>{
 //        db.init();
 
 //System.err.println("weizhuanhuade rquest()()()()"+msg);
-        System.err.println("@@@@@@@@@@@@@@@@\n"+msg+"##################\n");
+//        System.err.println("@@@@@@@@@@@@@@@@\n"+msg+"##################\n");
 
         if(msg instanceof HttpRequest){
             HttpRequest request=this.request=(HttpRequest)msg;

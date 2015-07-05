@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery-2.1.1.min.js"></script>
+    <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+    <!--<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
+    <!--<link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.4.1.min.css" />-->
+    <!--<script src="/jquerymobile/jquery.mobile-1.4.1.min.js"></script>-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>内容归档--Holy Fire</title>
+    <style>
+        .my_hd{
+            height: 325px;
+            overflow: hidden;
+            position: relative;
+            /*background-image: url("/Img/head_BG.png");*/
+        }
+        .hd_cont{
+            padding-left: 3%;
+            top: 80px;
+            left: 20%;
+            width: 100%;
+            height: 160px;
+            position: absolute;
+        }
+        .avatar_box{
+            width: 15%;
+            overflow: hidden;
+        }
+        .avatar{
+            display: block;
+            top: 85px;
+            left: 3%;
+            width: 180px;
+            height: 180px;
+            background: #aaa;
+            border: 5px #fff solid;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+            overflow: hidden;
+            position: absolute;
+        }
+        #space_title{
+            display: block;
+            margin-bottom: 15px !important;
+            height: 38px;
+            font-size: 38px;
+            line-height: 38px;
+            color: lightcyan;
+            text-shadow: 0px 0px 10px rgba(0,0,0,.5);
+            word-wrap: break-word;
+            font-family: verdana,Microsoft YaHei,Tahoma,sans-serif;
+        }
+        #space_title_description{
+            display: block;
+            font-size:20px;
+            color: lightcyan;
+            word-wrap:break-word;
+        }
+        .hd_nav{
+            width:60px;
+            height: 60px;
+            position: relative;
+            display: block;
+            top:-80px;
+            left:50%;
+            margin-left: 5px;
+        }
+
+        .main_content{
+            /*margin-top: 40px;*/
+        }
+        .left_content{
+
+            position: relative;
+            /*float: left;*/
+            left: 14%;
+            right: 16%;
+            width:70%;
+            /*border-right:solid 1px lightgrey;*/
+            margin-bottom: 20px;
+            /*padding-left: 30px;*/
+            background-color: #f5f5f5;
+
+
+        }
+        .right_content{
+            /*margin-top: 50px;*/
+            top: 50px;
+            right: 30px;
+            padding-left: 20px;
+            /*left: 75%;*/
+            /*position: relative;*/
+            /*float: right;*/
+            width:10%;
+            background-color: wheat;
+            /*z-index: -1;*/
+            /*min-height: 100%;*/
+            /*border:solid 1px lightgrey;*/
+            /*background-color: gray;*/
+
+        }
+        .clear{
+            clear:both
+        }
+
+        .my_name{
+            height: 40px;
+            background-color: #001b02;
+            color: #f5f5f5;
+            font-size: 30px;
+            padding-left: 35px;
+        }
+
+        @media screen and (max-width: 960px){
+            .avatar{
+                display: none;
+            }
+            .hd_cont{
+                top:40px;
+                left:5%;
+            }
+            .hd_nav{
+                left:83%;
+                top:10px;
+                position: fixed;
+                z-index: 666;
+            }
+            .right_content{
+                display: none;
+            }
+            .left_content{
+                width:100% !important;
+                left: 0;
+                right: 0;
+            }
+        }
+        .div-background{
+            background-color: #2f2f2f;
+
+        }
+        .value{
+            font-size: 1em;
+            width: 100%;
+            height: 1.5em;
+            /*border:solid 2px orange;*/
+        }
+        .year{
+            width:100%;
+            font-size: 3em;
+            margin-bottom: 10px;
+
+        }
+        .month{
+            display: none;
+            width:95%
+            margin-left: 5%;
+            height: 3em;
+            font-size: 2rem;
+        }
+        .index_by_date{
+            display: none;
+        }
+        .line{
+            margin-bottom: 10px;
+            height: 5px;
+            background-color: #333;
+        }
+        body,html{
+            min-height: 100%;
+        }
+    </style>
+</head>
+<body class="div-background">
+
+<div class="my_hd">
+    <div class="avatar_box">
+        <div class="avatar">
+            <img src="/Img/avatar.jpeg" style="width: 100%;">
+        </div>
+    </div>
+    <div class="hd_cont">
+        <h2 id="space_title">内容归档</h2>
+        <p3 id="space_title_description">一步一步似爪牙&nbsp;&nbsp;似魔鬼的步伐</p3>
+        <div class="hd_nav">
+            <a href="/home"><canvas id="myCanvas" width="50" height="50"></canvas></a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--<div class="my_name">Clocy </div>-->
+
+<div class="main_content">
+    <div class="left_content" >
+
+        <div class="line"></div>
+
+
+    </div>
+
+
+    <div class="right_content" style="position: fixed">
+        <div class="blog_tag">
+            <div class="tag_title">
+                <h3>Tag池</h3>
+            </div>
+
+            <!--<div class="panel-body "style="height:230px;">-->
+            <div class="tag_body" style="height:180px; overflow: hidden;">
+                <div id="all_tag">
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function (){
+                $("#all_tag").load("/tag_pool");
+            });
+            $(document).ready(function(){
+                $(".left_content").load("/recent_blog");
+            })
+
+        </script>
+    </div>
+</div>
+<div class="clear"></div><!-- html注释：清除float产生浮动 -->
+
+<script type="text/javascript">
+    //for the navigation button
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    cxt.beginPath();
+    cxt.arc(25,25,25,0,Math.PI*2,true);
+    cxt.fillStyle="lightblue";
+    cxt.closePath();
+    cxt.fill();
+    cxt.font = "30px Courier New";
+    cxt.fillStyle="lightcyan";
+    //从坐标点(50,50)开始绘制文字
+    cxt.fillText("首", 9, 35);
+</script>
+
+</body>
+</html>

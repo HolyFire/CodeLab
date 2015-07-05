@@ -19,48 +19,48 @@ import static io.netty.handler.codec.http.HttpHeaders.isKeepAlive;
 public class Routes {
 
     boolean keepAlive;
-    String uri=null;
+    String uri = null;
     RandomAccessFile raf = null;
-    HttpResponse response=new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
+    HttpResponse response = new DefaultHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.OK);
 
-    public Routes(ChannelHandlerContext ctx,HttpRequest request){
+    public Routes(ChannelHandlerContext ctx, HttpRequest request) {
 
 
-        keepAlive=isKeepAlive(request);
-        uri=request.getUri();
-        System.err.println("uri~~~\t"+uri);
-        String path=Conf.getRealPath(uri);
+        keepAlive = isKeepAlive(request);
+        uri = request.getUri();
+        System.err.println("uri~~~\t" + uri);
+        String path = Conf.getRealPath(uri);
 //        System.err.println("RealPath"+path);
-        File file=new File(path);
-        if(file.isHidden()||!file.exists()){
+        File file = new File(path);
+        if (file.isHidden() || !file.exists()) {
             System.err.println("file is hidden or not exist ");
             return;
         }
-        if(file.isDirectory()){
+        if (file.isDirectory()) {
             System.err.println("is Directory");
             return;
         }
 
         try {
 
-            raf=new RandomAccessFile(file,"r");
-            long fileLength=raf.length();
-            System.err.println("~~~~~~~~~~~"+String.valueOf(fileLength));
+            raf = new RandomAccessFile(file, "r");
+            long fileLength = raf.length();
+            System.err.println("~~~~~~~~~~~" + String.valueOf(fileLength));
 
 //            if (!request.getMethod().equals(HttpMethod.HEAD)){
-System.err.println(path);
+            System.err.println(path);
 
-                response.headers().set(CONTENT_LENGTH,fileLength);
+            response.headers().set(CONTENT_LENGTH, fileLength);
 //                response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
 //                response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
-                ctx.channel().write(response);
+            ctx.channel().write(response);
 
-                int bytelenth=0;
+            int bytelenth = 0;
 //                byte[] b=new byte[8192];
 //                raf.seek(0);
 //                int readCount=raf.read(b, 0, b.length);
 //                ByteBuf buf=copiedBuffer(b);
-                raf.seek(0);
+            raf.seek(0);
 
 //                BufferedInputStream in=new BufferedInputStream(new FileInputStream(file));
 //                byte[] b = new byte[8192];
@@ -76,18 +76,17 @@ System.err.println(path);
 //                ctx.channel().closeFuture();
 
 
-                while(raf.getFilePointer()<raf.length()){
-                    byte[] b=new byte[8192];
+            while (raf.getFilePointer() < raf.length()) {
+                byte[] b = new byte[8192];
 //                    System.out.println(b.length);
-                    int readCount=raf.read(b);
+                int readCount = raf.read(b);
 //                    System.err.println(readCount+"b.length"+b.length);
-                    ByteBuf buf=copiedBuffer(b,0,readCount);
-                    ctx.channel().write(buf);
+                ByteBuf buf = copiedBuffer(b, 0, readCount);
+                ctx.channel().write(buf);
 //                    System.err.println(bytelenth);
-                }
-                raf.close();
-
-                ctx.channel().writeAndFlush("").addListener(ChannelFutureListener.CLOSE);
+            }
+            raf.close();
+            ctx.channel().writeAndFlush("").addListener(ChannelFutureListener.CLOSE);
 
 //                ctx.channel().closeFuture().addListener(ChannelFutureListener.CLOSE);
 
@@ -96,7 +95,7 @@ System.err.println(path);
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally{
+        } finally {
 
 
 //            if (keepAlive) {
@@ -117,11 +116,13 @@ System.err.println(path);
     }
 
 
-    public Routes(ChannelHandlerContext ctx,String uri) {
+    public Routes(ChannelHandlerContext ctx, String uri) {
 
 
 //        System.err.println("RealPath"+path);
-        String path=Conf.getRealPath(uri);
+        String path = Conf.getRealPath(uri);
+//        System.out.println(path);
+
         File file = new File(path);
         if (file.isHidden() || !file.exists()) {
             System.err.println("file is hidden or not exist ");
@@ -138,26 +139,26 @@ System.err.println(path);
             long fileLength = raf.length();
             System.err.println("~~~~~~~~~~~" + String.valueOf(fileLength));
 
-                System.err.println(path);
+            System.err.println(path);
 
-                response.headers().set(CONTENT_LENGTH, fileLength);
-                response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
+            response.headers().set(CONTENT_LENGTH, fileLength);
+//            response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
 //                response.headers().set(CONTENT_TYPE, "text/html; charset=UTF-8");
-                ctx.channel().write(response);
+            ctx.channel().write(response);
 
-                int bytelenth = 0;
+            int bytelenth = 0;
 //                byte[] b=new byte[8192];
 //                raf.seek(0);
 //                int readCount=raf.read(b, 0, b.length);
 //                ByteBuf buf=copiedBuffer(b);
-                raf.seek(0);
+            raf.seek(0);
 
-            while(raf.getFilePointer()<raf.length()){
-                byte[] b=new byte[8192];
+            while (raf.getFilePointer() < raf.length()) {
+                byte[] b = new byte[8192];
 //                    System.out.println(b.length);
-                int readCount=raf.read(b);
+                int readCount = raf.read(b);
 //                    System.err.println(readCount+"b.length"+b.length);
-                ByteBuf buf=copiedBuffer(b,0,readCount);
+                ByteBuf buf = copiedBuffer(b, 0, readCount);
                 ctx.channel().write(buf);
 //                    System.err.println(bytelenth);
             }
@@ -176,7 +177,10 @@ System.err.println(path);
 ////                    System.err.println(bytelenth);
 //                }
 //            ctx.channel().closeFuture().addListener(ChannelFutureListener.CLOSE);
-            ctx.channel().writeAndFlush("").addListener(ChannelFutureListener.CLOSE);
+            ctx.channel().writeAndFlush("")
+                    .addListener(ChannelFutureListener.CLOSE)
+                    .addListener(ChannelFutureListener.FIRE_EXCEPTION_ON_FAILURE)
+                    .addListener(ChannelFutureListener.CLOSE_ON_FAILURE);
 
 
         } catch (Exception e) {
@@ -201,4 +205,4 @@ System.err.println(path);
     }
 
 
-    }
+}

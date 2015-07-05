@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.4.1.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title></title>
+
+    <style>
+        /*navigation bar*/
+        nav {
+            background-color: #333;
+        }
+
+        nav li {
+            /*display: inline-block;*/
+            padding-right: 10px;
+        }
+
+        nav li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5em;
+        }
+
+
+
+        @media screen and (max-width: 500px) {
+
+             nav ul {
+                display: none;
+                padding: 0;
+                margin: 0 5px;
+            }
+
+            #menuIcon {
+                display: block;
+                text-align: right;
+                padding: 0 5px;
+                border-bottom: 1px #9c9c9c solid;
+                background-color: #ff0000;
+            }
+        }
+
+        nav li a:hover {
+            color: #DDD;
+        }
+
+        nav li a:hover,#menuIcon:hover {
+            color: #DDD;
+        }
+
+
+
+        #menuIcon {
+            display: none;
+            color: blue;
+            font-weight: bold;
+            font-size: 2em;
+            text-decoration: none;
+            font-family: arial;
+        }
+    </style>
+</head>
+<body>
+
+<nav >
+    <ul>
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Articles</a>
+        </li>
+        <li>
+            <a href="#">Gallery</a>
+        </li>
+        <li>
+            <a href="#">Forum</a>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+    </ul>
+</nav>
+
+<nav id="ddd1" style="display: none">
+    <ul>
+        <a href="#" id="menuIcon" >Ξ</a>
+        <li>
+            <a href="#">Home</a>
+        </li>
+        <li>
+            <a href="#">Articles</a>
+        </li>
+        <li>
+            <a href="#">Gallery</a>
+        </li>
+        <li>
+            <a href="#">Forum</a>
+        </li>
+        <li>
+            <a href="#">About</a>
+        </li>
+    </ul>
+</nav>
+
+
+<script type="text/javascript">
+    $(function() {
+        $("#menuIcon,nav ul li").click(function() {
+            if ($("#menuIcon").is(":visible")) { //防止宽屏上点击
+                $("nav ul").toggle(300);
+            };
+        });
+    })
+</script>
+
+<!--<div data-role="page" id="pageone">-->
+    <!--<div data-role="header" data-position="fixed">-->
+        <!--<a href="#" data-role="button" data-icon="home">首页</a>-->
+        <!--<h1>欢迎访问我的主页</h1>-->
+        <!--<a href="#" data-role="button" data-icon="plus">更多</a>-->
+
+    <!--</div>-->
+    <!--<div data-role="content">-->
+        <!--<div data-role="content">-->
+            <!--<h2>我的通讯录</h2>-->
+            <!--<ul data-role="listview" data-autodividers="true" data-inset="true">-->
+                <!--<li><a href="#">Adele</a></li>-->
+                <!--<li><a href="#">Agnes</a></li>-->
+                <!--<li><a href="#">Albert</a></li>-->
+                <!--<li><a href="#">Billy</a></li>-->
+                <!--<li><a href="#">Bob</a></li>-->
+                <!--<li><a href="#">Calvin</a></li>-->
+                <!--<li><a href="#">Cameron</a></li>-->
+                <!--<li><a href="#">Chloe</a></li>-->
+                <!--<li><a href="#">Christina</a></li>-->
+                <!--<li><a href="#">Diana</a></li>-->
+                <!--<li><a href="#">Gabriel</a></li>-->
+                <!--<li><a href="#">Glen</a></li>-->
+                <!--<li><a href="#">Ralph</a></li>-->
+                <!--<li><a href="#">Valarie</a></li>-->
+            <!--</ul>-->
+            <!--<p>data-autodividers="true" 属性通过对列表项文本的首字母进行大写来创建分隔符。</p>-->
+        <!--</div>-->
+        <!--<p>欢迎！</p>-->
+        <!--<a href="#pagetwo" data-rel="dialog">转到页面二</a>-->
+    <!--</div>-->
+
+    <!--<div data-role="footer">-->
+        <!--<h1>页脚文本</h1>-->
+    <!--</div>-->
+<!--</div>-->
+
+<!--<div data-role="page" id="pagetwo">-->
+    <!--<div data-role="header">-->
+        <!--<h1>我是一个对话框！</h1>-->
+    <!--</div>-->
+
+    <!--<div data-role="content">-->
+        <!--<p>对话框与普通页面不同，它显示在当前页面的顶端。它不会横跨整个页面宽度。对话框页眉中的图标 “X” 可关闭对话框。</p>-->
+        <!--<a href="#pageone">转到页面一</a>-->
+    <!--</div>-->
+
+    <!--<div data-role="footer">-->
+        <!--<h1>页脚文本</h1>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<script>-->
+    <!--$("#pageone").bind("swipeleft",function(){-->
+        <!--$.mobile.changePage("#pagetwo");-->
+    <!--});-->
+    <!--$("#pagetwo").bind("swipeleft",function(){-->
+        <!--$.mobile.changePage("#pageone");-->
+    <!--});-->
+<!--</script>-->
+
+</body>
+</html>

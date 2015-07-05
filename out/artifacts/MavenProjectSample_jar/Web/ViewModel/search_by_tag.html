@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!--<link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="/jquery-2.1.1.min.js"></script>-->
+    <!--<script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>-->
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Category:&begin:tag:end&</title>
+    <style>
+        /*html,body{height:100%;}*/
+        /*html,body{position:absolute;width:100%;min-height:100%; }*/
+        .excerpt {
+            padding: 20px 20px 20px 20px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+
+        }
+
+        .aw-logo a{display:block;width: 96px;height: 36px;background:url('Img/gamersky_068origin_135_2014125155836.jpg') no-repeat;}
+        .aw-logo h1{height:25px;line-height:25px;margin:-2px 0 2px 0;font-size:14px;white-space: pre-wrap}
+        .datetime {
+            width: 60px;
+            background: #00BCF2;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            color: #FFF;
+            font-size: 14px;
+            font-family: Arial;
+            padding: 8px 0;
+        }
+
+        .tit .titTitle {
+            border-bottom: 1px solid #DFDFDF;
+            padding-bottom: 5px;
+            height: 24px;
+            line-height: 28px;
+            overflow: hidden;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+
+
+        .tit .iititle {
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        /*p {*/
+        /*text-indent: 2em;*/
+        /*}*/
+        .tit .iititle .i2 {
+            /*background-position: 0px -77px;*/
+            margin:0px 10px 0px 20px;
+        }
+        .tit .iititle .i1 {
+            /*background-position: 0px -33px;*/
+        }
+
+        .recent_blog{
+            text-align: right;
+            font-size: small;
+        }
+
+        .c-con {
+            line-height: 28px;
+            font-size: 14px;
+            margin-top: 5px;
+            border-bottom: 1px dotted #DFDFDF;
+            padding-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+        }
+        .item {
+            overflow: hidden;
+            font-size: 14px;
+            color: #999;
+            padding-left: 5px;
+            padding-right: 20px;
+
+        }
+
+        .blog_text{
+            align-self: center;height: 150px;text-overflow: ellipsis;overflow: hidden;padding-top: 20px;
+        }
+    </style>
+
+</head>
+<body  style="background-color: #f5f5f5;position:relative;min-height:100%;padding-bottom: 90px;">
+<nav class="navbar navbar-default" role="navigation" style="width: 100%;background-color: #ffffff">
+    <div class="container" >
+        <!--<div class="aw-logo">-->
+        <!--<a href="#"></a>-->
+        <!--</div>-->
+
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/StationWel.html" style="font: Geneva;font-size: x-large">HolyFire</a>
+        </div>
+
+        <div style="font-size: large">
+            <ul class="nav navbar-nav" style="margin: 0px 0px 0px 30px">
+                <li class="active" ><a href="/StationWel.html">首页</a></li>
+                <li class="&begin:active_2:end&"><a href="/category/note">各种笔记</a></li>
+                <li class="&begin:active_3:end&"><a href="/category/for_fun">生活娱乐</a></li>
+                <li class="&begin:active_4:end&"><a href="/category/scrawl">不要点进来</a> </li>
+                <li class="&begin:active_5:end&"><a href="/category/test">关于我</a> </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container" style="font-family: Serif">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>&begin:tag:end&</h3>
+
+            <div class="panel panel-default"  style="margin-bottom: 100px">
+                <!--<div class="panel-heading" style="background-color: ghostwhite">-->
+                <!--<h3 class="panel-title" >-->
+                <!--带有 title 的面板标题-->
+                <!--</h3>-->
+                <!--</div>-->
+
+                <div id="mainContent">
+
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#mainContent").load("/blogIndex");
+            });
+        </script>
+
+
+        <!--<script>-->
+        <!--$(document).ready(function(){-->
+        <!--$("#mainContent").load("/blogIndex");-->
+        <!--});-->
+        <!--</script>-->
+
+        <div class="col-sm-4">
+            <h3>近期文章</h3>
+
+
+            <div class="panel panel-default">
+                <div class="panel-body" style="height: 230px">
+                    <div id="resent_title">
+                        <span style="display: none"><p>我很懒，什么都没留下</p></span>
+                    </div>
+
+                </div>
+            </div>
+            <script>
+                $(document).ready(function(){
+                    $("#resent_title").load("/recent_blog");
+                });
+            </script>
+
+            <h3>Tag池</h3>
+            <div class="panel panel-default">
+                <div class="panel-body" style="height: 230px">
+                    <div id="all_tag">
+                        什么标签都没有 %>_<%
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function (){
+                    $("#all_tag").load("/tag_pool");
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<footer class="footer"> <div class="container"> <p>版权所有，保留一切权利！ · © 2015 <a href="/">It's Clocy</a></p> </div> </footer>
+
+<style>
+    .footer {
+
+        position:absolute;
+        bottom:0;
+        left:0;
+        width: 100%;
+        clear: both;
+        height: 40px;
+        padding: 40px 30px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        color: #888;
+        background-color: #444;
+    }
+</style>
+
+</html>

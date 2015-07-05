@@ -1,10 +1,274 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+    <link href="/bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/jquery-2.1.1.min.js"></script>
+    <script src="/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <!--<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+    <!--<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>-->
     <meta charset="UTF-8">
-    <title></title>
+    <title>Category:&begin:tag:end&</title>
+    <style>
+        .readmore{
+            position: absolute;
+            right: 10%;
+            width: 110px;
+            background: #ccc;
+            transition:width 1s;
+            -moz-transition:width 1s; /* Firefox 4 */
+            -webkit-transition:width 1s; /* Safari and Chrome */
+            -o-transition:width 1s; /* Opera */
+        }
+        .readmore:hover{
+            width:150px;
+        }
+        /*html,body{height:100%;}*/
+        /*html,body{position:absolute;width:100%;min-height:100%; }*/
+        .excerpt {
+            padding: 20px 20px 20px 20px;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+
+        }
+
+        .aw-logo a{display:block;width: 96px;height: 36px;background:url('Img/gamersky_068origin_135_2014125155836.jpg') no-repeat;}
+        .aw-logo h1{height:25px;line-height:25px;margin:-2px 0 2px 0;font-size:14px;white-space: pre-wrap}
+        .datetime {
+            width: 60px;
+            background: #00BCF2;
+            text-align: center;
+            line-height: 20px;
+            float: left;
+            color: #FFF;
+            font-size: 14px;
+            font-family: Arial;
+            padding: 8px 0;
+        }
+
+        .tit .titTitle {
+            border-bottom: 1px solid #DFDFDF;
+            padding-bottom: 5px;
+            height: 24px;
+            line-height: 28px;
+            overflow: hidden;
+            font-size: larger;
+            font-weight: bolder;
+
+        }
+
+
+        .tit .iititle {
+            height: 16px;
+            line-height: 16px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+        /*p {*/
+        /*text-indent: 2em;*/
+        /*}*/
+        .tit .iititle .i2 {
+            /*background-position: 0px -77px;*/
+            margin:0px 10px 0px 20px;
+        }
+        .tit .iititle .i1 {
+            /*background-position: 0px -33px;*/
+        }
+
+        .recent_blog{
+            text-align: right;
+            font-size: small;
+        }
+
+        .c-con {
+            line-height: 28px;
+            font-size: 14px;
+            margin-top: 5px;
+            border-bottom: 1px dotted #DFDFDF;
+            padding-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+        }
+        .item {
+            overflow: hidden;
+            font-size: 14px;
+            color: #999;
+            padding-left: 5px;
+            padding-right: 20px;
+
+        }
+
+        .blog_text{
+            align-self: center;height: 150px;text-overflow: ellipsis;overflow: hidden;padding-top: 20px;
+        }
+
+        .my_hd{
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: goldenrod;
+            /*background-image: url("/Img/head_BG.png");*/
+        }
+        .hd_cont{
+            padding-left: 3%;
+            top: 80px;
+            left: 20%;
+            width: 100%;
+            height: 160px;
+            position: absolute;
+        }
+        .avatar_box{
+            width: 15%;
+            overflow: hidden;
+        }
+        .avatar{
+            display: block;
+            top: 20px;
+            left: 3%;
+            width: 180px;
+            height: 180px;
+            background: #aaa;
+            border: 5px #fff solid;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.3);
+            overflow: hidden;
+            position: absolute;
+        }
+
+
+        .hd_nav{
+            width:60px;
+            height: 60px;
+            position: relative;
+            display: block;
+            top:-80px;
+            left:50%;
+            margin-left: 5px;
+        }
+
+        @media screen and (max-width: 960px){
+            .avatar{
+                display: none;
+            }
+            .hd_cont{
+                top:40px;
+                left:5%;
+            }
+            .hd_nav{
+                left:85%;
+                top:10px;
+                position: fixed;
+                z-index: 666;
+            }
+
+        }
+    </style>
+
 </head>
-<body>
+<body  style="background-color:lightgoldenrodyellow;position:relative;min-height:100%;padding-bottom: 90px;">
+<div class="my_hd">
+    <div class="avatar_box">
+        <div class="avatar">
+            <img src="/Img/avatar.jpeg" style="width: 100%;">
+        </div>
+    </div>
+    <div class="hd_cont" style="color:#f5f5f5">
+        <h1 >&begin:tag:end&</h1>
+        <div class="hd_nav">
+            <a href="/collection"><canvas id="myCanvas" width="50" height="50"></canvas></a>
+        </div>
+    </div>
+    </div>
+
+
+
+
+<div  style="font-family: Serif;padding-left: 20px;padding-right: 20px">
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>&begin:tag:end&</h3>
+
+            <div class="panel panel-default"  style="margin-bottom: 100px">
+                <!--<div class="panel-heading" style="background-color: ghostwhite">-->
+                <!--<h3 class="panel-title" >-->
+                <!--带有 title 的面板标题-->
+                <!--</h3>-->
+                <!--</div>-->
+
+                <div id="mainContent">
+
+                </div>
+
+            </div>
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#mainContent").load("/tagIndex/&begin:tag:end&");
+            });
+        </script>
+
+
+        <!--<script>-->
+        <!--$(document).ready(function(){-->
+        <!--$("#mainContent").load("/blogIndex");-->
+        <!--});-->
+        <!--</script>-->
+
+        <div class="col-sm-4">
+
+            <h3>Tag池</h3>
+            <div class="panel panel-default">
+                <div class="panel-body" style="height: 230px">
+                    <div id="all_tag">
+                        什么标签都没有 %>_<%
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function (){
+                    $("#all_tag").load("/tag_pool");
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+
 
 </body>
+
+<footer class="footer"> <div class="container"> <p>版权所有，保留一切权利！ · © 2015 <a href="/">It's Clocy</a></p> </div> </footer>
+
+<style>
+    .footer {
+
+        position:absolute;
+        bottom:0;
+        left:0;
+        width: 100%;
+        clear: both;
+        height: 40px;
+        padding: 40px 30px;
+        font-size: 12px;
+        line-height: 12px;
+        text-align: center;
+        color: #888;
+        background-color: #444;
+    }
+</style>
+<script type="text/javascript">
+    //for the navigation button
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    cxt.beginPath();
+    cxt.arc(25,25,25,0,Math.PI*2,true);
+    cxt.fillStyle="lightblue";
+    cxt.closePath();
+    cxt.fill();
+    cxt.font = "30px Courier New";
+    cxt.fillStyle="lightcyan";
+    //从坐标点(50,50)开始绘制文字
+    cxt.fillText("归", 9, 35);
+</script>
+
 </html>

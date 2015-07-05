@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * Created by DELL on 2014-12-22.
  */
 public class ModelTrans {
-    public String keyWordsReplace(String path,HashMap<String,String> map) throws IOException {
+    public static String keyWordsReplace(String path,HashMap<String,String> map) throws IOException {
         path=new GetLocation().getLocation()+"/Web"+path;
         StringBuilder sb = new StringBuilder();
         Pattern re=Pattern.compile("&begin:(.*?):end&");
